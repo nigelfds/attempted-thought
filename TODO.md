@@ -2,29 +2,33 @@
 
 Tracking progress on Nigel's personal site.
 
-## ✅ Done — scaffold & prototype
+## ✅ Done — scaffold, build, deploy
 
 - [x] Project scaffold: `package.json`, `.nvmrc` (Node 20), `.gitignore`
 - [x] Express local preview server (`server.js`)
-- [x] Single-page layout with all six sections
-- [x] Icon-rail navigation: vertical (desktop) ↔ horizontal top pill (mobile)
-- [x] Scroll-spy active-state highlighting (`main.js`)
+- [x] No-framework build step (`build.js`): `src/` → `public/`
+- [x] Multi-page layout with shared shell (`src/layout.html`)
+- [x] Routes: `/`, `/blog/`, `/projects/`, `/books/`, `/papers/`, `/contact/`
+- [x] Home = About + 3 latest posts; `/blog/` lists all
+- [x] Markdown blog posts → per-post routes (`/blog/<slug>/`)
+- [x] Icon-rail nav: vertical (desktop) ↔ horizontal top pill (mobile)
+- [x] Path-based active-state highlighting
 - [x] Typography: Gambetta + General Sans via Fontshare
-- [x] Minimalist design system + dark-mode palette
-- [x] README with dev + GitHub Pages deploy docs
+- [x] Color scheme follows OS + toggle to override to light
+- [x] Deploy-on-push: `.githooks/pre-push` builds + publishes to `gh-pages`
+- [x] README with full dev + deploy docs
 
 ## ⏳ Awaiting your feedback (prototype review)
 
-- [ ] Colors / accent — keep warm off-white + blue accent, or change?
-- [ ] Single-page (current) vs. multi-page (a route per section)?
-- [ ] Icon choices for each section
-- [ ] Tooltips on hover — keep, or labels always visible?
-- [ ] Overall layout width and spacing
+- [x] Single-page vs. multi-page → **multi-page**
+- [x] Accent color → **keep blue for now**
+- [x] Tooltips on hover → **keep as-is**
+- [ ] Icon choices for each section (revisit later)
 
 ## 📝 Content (replace placeholders)
 
 - [ ] About: real bio + correct social links
-- [ ] Blog: real posts (and decide where post bodies live)
+- [ ] Blog: replace the 3 sample posts in `src/posts/` with real ones
 - [ ] Projects: real projects, descriptions, links, tags
 - [ ] Books I like: real list
 - [ ] Papers I've read: real list (+ links)
@@ -32,14 +36,16 @@ Tracking progress on Nigel's personal site.
 
 ## 🚀 Launch
 
-- [ ] Create GitHub repo and push
-- [ ] `npm run deploy` → enable Pages on `gh-pages` branch
-- [ ] (Optional) custom domain via `public/CNAME` + DNS
+- [x] Git repo initialized; `origin` → github.com:nigelfds/attempted-thought
+- [ ] First push to `main` (triggers auto-deploy to `gh-pages`)
+- [ ] In GitHub **Settings → Pages**, set source to `gh-pages` branch (root)
+- [ ] (Optional) custom domain via `src/assets/CNAME` + DNS
 - [ ] Add favicon + social preview image (Open Graph / Twitter cards)
-- [ ] Final pass: meta description, page title, accessibility check
+- [ ] Final pass: meta descriptions, accessibility check
 
 ## 💡 Possible later
 
 - [ ] Self-host fonts for offline / no third-party requests
+- [ ] Watch-and-rebuild during `npm run dev` (e.g. chokidar)
 - [ ] RSS feed for the blog
-- [ ] Per-post pages if the blog grows
+- [ ] Syntax highlighting in post code blocks
