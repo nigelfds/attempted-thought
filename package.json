@@ -1,0 +1,23 @@
+{
+  "name": "attempted-thought",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nigel's personal website — a minimalist multi-page site built from src/ into static files, previewed with Express and deployed to GitHub Pages.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node server.js",
+    "dev": "node build.js && node --watch server.js",
+    "deploy": "node build.js && gh-pages -d public -b gh-pages"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "marked": "^12.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
