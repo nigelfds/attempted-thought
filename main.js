@@ -4,7 +4,11 @@ const here = location.pathname.replace(/index\.html$/, "") || "/";
 
 for (const a of links) {
   const href = new URL(a.href).pathname;
-  const active = href === "/" ? here === "/" : here.startsWith(href);
+  // The home link matches its exact path; section links match any sub-path
+  // (e.g. a blog post keeps "Blog" active). data-nav="home" keeps this working
+  // regardless of the base path the site is served from.
+  const active =
+    a.dataset.nav === "home" ? here === href : here.startsWith(href);
   a.classList.toggle("is-active", active);
 }
 

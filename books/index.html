@@ -12,7 +12,7 @@
     href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&f[]=gambetta@400,500,600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
   <!-- Theme toggle: default follows the OS; click to override to light. -->
@@ -28,32 +28,37 @@
   <nav class="rail" aria-label="Primary">
     <ul>
       <li>
-        <a href="/" data-label="About" aria-label="About">
+        <a href="../" data-nav="home" data-label="About" aria-label="About">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </a>
       </li>
       <li>
-        <a href="/blog/" data-label="Blog" aria-label="Blog">
+        <a href="../blog/" data-label="Blog" aria-label="Blog">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 17a2 2 0 0 0-2-2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></svg>
         </a>
       </li>
       <li>
-        <a href="/projects/" data-label="Projects" aria-label="Projects">
+        <a href="../projects/" data-label="Projects" aria-label="Projects">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
         </a>
       </li>
       <li>
-        <a href="/books/" data-label="Books" aria-label="Books I like">
+        <a href="../books/" data-label="Books" aria-label="Books I like">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
         </a>
       </li>
       <li>
-        <a href="/papers/" data-label="Papers" aria-label="Papers I've read">
+        <a href="../papers/" data-label="Papers" aria-label="Papers I've read">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
         </a>
       </li>
       <li>
-        <a href="/contact/" data-label="Contact" aria-label="Contact">
+        <a href="../talks/" data-label="Talks" aria-label="Past talks and presentations">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../contact/" data-label="Contact" aria-label="Contact">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-3.5 7.1"/></svg>
         </a>
       </li>
@@ -64,23 +69,420 @@
     <section class="section section--page">
       <h1>Books I like<span class="period">.</span></h1>
       <p class="section-note">A running shelf of books that stuck with me.</p>
-      <ul class="entry-list">
-        <li class="entry">
-          <span class="entry-title">Book Title</span>
-          <span class="entry-meta">Author Name</span>
-          <p class="entry-desc">One line on why it's worth your time.</p>
+      <h2 class="papers-group">The must reads</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/continuous-delivery.jpg" alt="Cover of Continuous Delivery" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912" target="_blank" rel="noopener">Continuous Delivery</a>
+            <p class="book-note">by Humble and Farley.</p>
+          </div>
         </li>
-        <li class="entry">
-          <span class="entry-title">Another Book</span>
-          <span class="entry-meta">Author Name</span>
-          <p class="entry-desc">One line on why it's worth your time.</p>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/thinking-in-systems-a-primer.jpg" alt="Cover of Thinking in Systems: A Primer" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" target="_blank" rel="noopener">Thinking in Systems: A Primer</a>
+            <p class="book-note">by Donella Meadows. One of the most effective tools for reasoning through complex problems. This book is a readable, powerful introduction among many on the topic.</p>
+          </div>
         </li>
-        <li class="entry">
-          <span class="entry-title">A Third Book</span>
-          <span class="entry-meta">Author Name</span>
-          <p class="entry-desc">One line on why it's worth your time.</p>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-mythical-man-month.jpg" alt="Cover of The Mythical Man-Month" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959" target="_blank" rel="noopener">The Mythical Man-Month</a>
+            <p class="book-note">by Frederick Brooks. The seminal book on software engineering, must read for anyone.</p>
+          </div>
         </li>
-      </ul>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/an-elegant-puzzle-systems-of-engineering-management.jpg" alt="Cover of An Elegant Puzzle: Systems of Engineering Management" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186/" target="_blank" rel="noopener">An Elegant Puzzle: Systems of Engineering Management</a>
+            <p class="book-note">by Will Larson. The best book for engineers making the transition from technical lead to engineering manager.</p>
+          </div>
+        </li></ul><h2 class="papers-group">Getting Started in Engineering</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Refactoring-Martin-Fowler/dp/0134757599/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/refactoring-improving-the-design-of-existing-code.jpg" alt="Cover of Refactoring: Improving the Design of Existing Code" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Refactoring-Martin-Fowler/dp/0134757599/" target="_blank" rel="noopener">Refactoring: Improving the Design of Existing Code</a>
+            <p class="book-note">by Martin Fowler</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Implementation-Patterns-Kent-Beck/dp/0321413091/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/implementation-patterns.jpg" alt="Cover of Implementation Patterns" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Implementation-Patterns-Kent-Beck/dp/0321413091/" target="_blank" rel="noopener">Implementation Patterns</a>
+            <p class="book-note">by Kent Beck</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/clean-code-a-handbook-of-agile-software-craftsmanship.jpg" alt="Cover of Clean Code: A Handbook of Agile Software Craftsmanship" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank" rel="noopener">Clean Code: A Handbook of Agile Software Craftsmanship</a>
+            <p class="book-note">by Robert Martin, a.k.a uncle Bob.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Extreme-Programming-Explained-Embrace-Change/dp/0321278658/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/extreme-programming-explained-embrace-change.jpg" alt="Cover of Extreme Programming Explained: Embrace Change" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Extreme-Programming-Explained-Embrace-Change/dp/0321278658/" target="_blank" rel="noopener">Extreme Programming Explained: Embrace Change</a>
+            <p class="book-note">by Kent Beck</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Pragmatic-Programmer-special-David-Thomas/dp/0135957052/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-pragmatic-programmer-your-journey-to-mastery.jpg" alt="Cover of The Pragmatic Programmer: Your journey to mastery" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Pragmatic-Programmer-special-David-Thomas/dp/0135957052/" target="_blank" rel="noopener">The Pragmatic Programmer: Your journey to mastery</a>
+            <p class="book-note">by Thomas and Hunt.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/head-first-design-patterns-building-extensible-and-maintainable-object-oriented-software.jpg" alt="Cover of Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Head-First-Design-Patterns-Object-Oriented/dp/149207800X/" target="_blank" rel="noopener">Head First Design Patterns: Building Extensible and Maintainable Object-Oriented Software</a>
+            <p class="book-note">by Freeman and Robson</p>
+          </div>
+        </li></ul><h2 class="papers-group">Senior Engineering and Architcture Skills</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/domain-driven-design-tackling-complexity-in-the-heart-of-software.jpg" alt="Cover of Domain-Driven Design: Tackling Complexity in the Heart of Software" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/" target="_blank" rel="noopener">Domain-Driven Design: Tackling Complexity in the Heart of Software</a>
+            <p class="book-note">by Eric Evans.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/patterns-of-enterprise-application-architecture.jpg" alt="Cover of Patterns of Enterprise Application Architecture" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420" target="_blank" rel="noopener">Patterns of Enterprise Application Architecture</a>
+            <p class="book-note">by Martin Fowler</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/enterprise-integration-patterns.jpg" alt="Cover of Enterprise Integration Patterns" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Enterprise-Integration-Patterns-Designing-Deploying/dp/0321200683" target="_blank" rel="noopener">Enterprise Integration Patterns</a>
+            <p class="book-note">by Hohpe and Woolf</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Software-Architect-Elevator-Redefining-Architects/dp/1492077542/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-software-architect-elevator-redefining-the-architects-role-in-the-digital-enterprise.jpg" alt="Cover of The Software Architect Elevator: Redefining the Architect's Role in the Digital Enterprise" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Software-Architect-Elevator-Redefining-Architects/dp/1492077542/" target="_blank" rel="noopener">The Software Architect Elevator: Redefining the Architect's Role in the Digital Enterprise</a>
+            <p class="book-note">by Gregor Hohpe. If you want to be architect, this book defines how to be an true value adding architect in the modern organisation</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Agile-Data-Warehouse-Design-Collaborative/dp/0956817203/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:137" aria-hidden="true">A</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Agile-Data-Warehouse-Design-Collaborative/dp/0956817203/" target="_blank" rel="noopener">Agile Data Warehouse Design: Collaborative Dimensional Modeling, from Whiteboard to Star Schema</a>
+            <p class="book-note">by Lawrence Corr and Jim Stagnitto. This book is the missing manual that helps regular engineers get an insight into the world of warehouse design. The BEAM* model and the ideas behind star and snowflake schema&#39;s are so often missed entirely.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Talking-Tech-Leads-Novices-Practitioners/dp/150581748X" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:282" aria-hidden="true">T</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Talking-Tech-Leads-Novices-Practitioners/dp/150581748X" target="_blank" rel="noopener">Talking with Tech Leads: From Novices to Practitioners</a>
+            <p class="book-note">by Pat Kua. Quick read, a book focussed on interviewing people who have made the journey from entry engineer to Tech Lead.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Enterprise-Architecture-Strategy-Foundation-Execution/dp/1591398398/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/enterprise-architecture-as-strategy-creating-a-foundation-for-business-execution.jpg" alt="Cover of Enterprise Architecture As Strategy: Creating a Foundation for Business Execution" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Enterprise-Architecture-Strategy-Foundation-Execution/dp/1591398398/" target="_blank" rel="noopener">Enterprise Architecture As Strategy: Creating a Foundation for Business Execution</a>
+            <p class="book-note">by Jeanne W. Ross, Peter Weill, David Robertson</p>
+          </div>
+        </li></ul><h2 class="papers-group">Engineering Management</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Fable/dp/0787960756/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-five-dysfunctions-of-a-team.jpg" alt="Cover of The Five Dysfunctions of a Team" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Five-Dysfunctions-Team-Leadership-Fable/dp/0787960756/" target="_blank" rel="noopener">The Five Dysfunctions of a Team</a>
+            <p class="book-note">by Patrick Lencioni.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Three-Signs-Miserable-Job/dp/8126552697/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-three-signs-of-a-miserable-job.jpg" alt="Cover of The Three Signs of a Miserable Job" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Three-Signs-Miserable-Job/dp/8126552697/" target="_blank" rel="noopener">The Three Signs of a Miserable Job</a>
+            <p class="book-note">by Patrick Lencioni. Another Lencioni book, this one explaining a three-point model for what makes jobs rewarding.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Finite-Infinite-Games-James-Carse-ebook/dp/B004W3FM4A/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/finite-and-infinite-games.jpg" alt="Cover of Finite and Infinite Games" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Finite-Infinite-Games-James-Carse-ebook/dp/B004W3FM4A/" target="_blank" rel="noopener">Finite and Infinite Games</a>
+            <p class="book-note">by James Carse. Success in most life situations is about letting everyone continue to play, not about zero-sum outcomes.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Becoming-Technical-Leader-Gerald-Weinberg-ebook/dp/B004J4VV3I/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/becoming-a-technical-leader-an-organic-problem-solving-approach.jpg" alt="Cover of Becoming a Technical Leader: An Organic Problem-Solving Approach" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Becoming-Technical-Leader-Gerald-Weinberg-ebook/dp/B004J4VV3I/" target="_blank" rel="noopener">Becoming a Technical Leader: An Organic Problem-Solving Approach</a>
+            <p class="book-note">by Gerald Weinberg. Permission to be a leader that builds on your strengths, not whatever model that folks think you should fit into.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth-ebook/dp/B06XP3GJ7F/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-managers-path-a-guide-for-tech-leaders-navigating-growth-and-change.jpg" alt="Cover of The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth-ebook/dp/B06XP3GJ7F/" target="_blank" rel="noopener">The Manager's Path: A Guide for Tech Leaders Navigating Growth and Change</a>
+            <p class="book-note">by Camille Fournier.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/High-Output-Management-Andrew-Grove-ebook/dp/B015VACHOK/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:324" aria-hidden="true">H</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/High-Output-Management-Andrew-Grove-ebook/dp/B015VACHOK/" target="_blank" rel="noopener">High Output Management</a>
+            <p class="book-note">by Andy Grove.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/First-Days-Updated-Expanded-Strategies-ebook/dp/B00B6U63ZE/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-first-90-days.jpg" alt="Cover of The First 90 Days" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/First-Days-Updated-Expanded-Strategies-ebook/dp/B00B6U63ZE/" target="_blank" rel="noopener">The First 90 Days</a>
+            <p class="book-note">by Michael Watkins. No matter the role, this books has advice on being successful in a new job. The more senior your new role, the better the returns from this book.</p>
+          </div>
+        </li></ul><h2 class="papers-group">DevOps &amp; SRE</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B078Y98RG8/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-phoenix-project.jpg" alt="Cover of The Phoenix Project" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B078Y98RG8/" target="_blank" rel="noopener">The Phoenix Project</a>
+            <p class="book-note">by Kim, Behr and Spafford.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/accelerate-building-and-scaling-high-performing-technology-organizations.jpg" alt="Cover of Accelerate: Building and Scaling High Performing Technology Organizations" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations-ebook/dp/B07B9F83WM/" target="_blank" rel="noopener">Accelerate: Building and Scaling High Performing Technology Organizations</a>
+            <p class="book-note">by Forsgren, Humble and Kim.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Drift-into-Failure-Sidney-Dekker/dp/1409422216" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/drift-into-failure.jpg" alt="Cover of Drift into Failure" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Drift-into-Failure-Sidney-Dekker/dp/1409422216" target="_blank" rel="noopener">Drift into Failure</a>
+            <p class="book-note">by Sydney Dekker. This is the book that inspired Adrian Cockroft to tackle system stability through Chaos Engineering approaches at Netflix.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1950508404/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-devops-handbook.jpg" alt="Cover of The DevOps Handbook" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/DevOps-Handbook-World-Class-Reliability-Organizations/dp/1950508404/" target="_blank" rel="noopener">The DevOps Handbook</a>
+            <p class="book-note">by Gene Kim, Jez Humble, Patrick Debois, John Willis, and Nicole Forsgren.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://sre.google/sre-book/table-of-contents/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:219" aria-hidden="true">T</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://sre.google/sre-book/table-of-contents/" target="_blank" rel="noopener">The Google SRE Book</a>
+            <p class="book-note">free online eBook that describes SRE by the people who effectively created it</p>
+          </div>
+        </li></ul><h2 class="papers-group">Engineering Productivity</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Death-Meeting-Leadership-Business-Lencioni-ebook/dp/B008L03W7O/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/death-by-meeting.jpg" alt="Cover of Death by Meeting" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Death-Meeting-Leadership-Business-Lencioni-ebook/dp/B008L03W7O/" target="_blank" rel="noopener">Death by Meeting</a>
+            <p class="book-note">by Patrick Lencioni.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Deadline-Novel-About-Project-Management-ebook/dp/B006MN4RAS/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-deadline-a-novel-about-project-management.jpg" alt="Cover of The Deadline: A Novel About Project Management" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Deadline-Novel-About-Project-Management-ebook/dp/B006MN4RAS/" target="_blank" rel="noopener">The Deadline: A Novel About Project Management</a>
+            <p class="book-note">by Tom DeMarco.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Adrenaline-Junkies-Template-Zombies-Understanding-ebook/dp/B00DY3KQHM/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:139" aria-hidden="true">A</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Adrenaline-Junkies-Template-Zombies-Understanding-ebook/dp/B00DY3KQHM/" target="_blank" rel="noopener">Adrenaline Junkies and Template Zombies: Understanding Patterns of Project Behavior</a>
+            <p class="book-note">by DeMarco, Hruschka, Lister, McMenamin, Robertson and Robertson.</p>
+          </div>
+        </li></ul><h2 class="papers-group">Leadership</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Good-Strategy-Bad-Difference-Matters-ebook/dp/B004J4WKEC/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/good-strategy-bad-strategy-the-difference-and-why-it-matters.jpg" alt="Cover of Good Strategy Bad Strategy: The Difference and Why it Matters" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Good-Strategy-Bad-Difference-Matters-ebook/dp/B004J4WKEC/" target="_blank" rel="noopener">Good Strategy Bad Strategy: The Difference and Why it Matters</a>
+            <p class="book-note">by Richard Rumelt. This book gives the reader insight into well written stratgey and importantly those are not, and a structured approach to writing good strategies.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Connected-Company-Dave-Gray/dp/1491919477/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/connected-company.jpg" alt="Cover of Connected Company" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Connected-Company-Dave-Gray/dp/1491919477/" target="_blank" rel="noopener">Connected Company</a>
+            <p class="book-note">by Dave Gray and Thomas Vander Wal. The book that explains companies and organisation as biological creatures that respond. Great insight to navigate the nature of a human centric organisation.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B012BLTM6I/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-innovators-dilemma-when-new-technologies-cause-great-firms-to-fail.jpg" alt="Cover of The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Innovators-Dilemma-Technologies-Management-Innovation-ebook/dp/B012BLTM6I/" target="_blank" rel="noopener">The Innovator's Dilemma: When New Technologies Cause Great Firms to Fail</a>
+            <p class="book-note">by Clayton Christensen. A look at how being hyper-rational in the short-run has lead many great companies to failure. Highly useful to think about when doing strategic planning.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/How-Measure-Anything-Intangibles-Business/dp/1118539273" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/how-to-measure-anything-finding-the-value-of-intangibles-in-business.jpg" alt="Cover of How to Measure Anything: Finding the Value of Intangibles in Business" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/How-Measure-Anything-Intangibles-Business/dp/1118539273" target="_blank" rel="noopener">How to Measure Anything: Finding the Value of Intangibles in Business</a>
+            <p class="book-note">by Douglas W. Hubbard. Slightly complex read, but give you the tools to measure and make a business or evaluate a concept or idea.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Agile-Organization-Design-Transformation-Continuous/dp/0133903354" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:4" aria-hidden="true">A</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Agile-Organization-Design-Transformation-Continuous/dp/0133903354" target="_blank" rel="noopener">Agile IT Organization Design: For Digital Transformation and Continuous Delivery</a>
+            <p class="book-note">by Sriram Narayan. This is a brilliant book dealing the with different types of teams and project structures you encounter in most traditional organisations. Provides the rationale to understand the drivers that create those strcutures, the mechanism to change them, and the language to explain.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Leadership-Pipeline-Powered-Company-non-Franchise-ebook/dp/B004BA5776/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-leadership-pipeline-how-to-build-the-leadership-powered-company.jpg" alt="Cover of The Leadership Pipeline: How to Build the Leadership Powered Company" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Leadership-Pipeline-Powered-Company-non-Franchise-ebook/dp/B004BA5776/" target="_blank" rel="noopener">The Leadership Pipeline: How to Build the Leadership Powered Company</a>
+            <p class="book-note">by Charan, Drotter and Noel. This book explains how thoughtful many good companies are in intentionally growing new leadership.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Effective-Executive-Definitive-Harperbusiness-Essentials-ebook/dp/B01F1WZGNC/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-effective-executive-the-definitive-guide-to-getting-the-right-things-done.jpg" alt="Cover of The Effective Executive: The Definitive Guide to Getting the Right Things Done" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Effective-Executive-Definitive-Harperbusiness-Essentials-ebook/dp/B01F1WZGNC/" target="_blank" rel="noopener">The Effective Executive: The Definitive Guide to Getting the Right Things Done</a>
+            <p class="book-note">by Peter Drucker.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Innovators-Solution-Creating-Sustaining-Successful-ebook/dp/B00E257S7C/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-innovators-solution-creating-and-sustaining-successful-growth.jpg" alt="Cover of The Innovator's Solution: Creating and Sustaining Successful Growth" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Innovators-Solution-Creating-Sustaining-Successful-ebook/dp/B00E257S7C/" target="_blank" rel="noopener">The Innovator's Solution: Creating and Sustaining Successful Growth</a>
+            <p class="book-note">by Christensen and Raynor.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Rise-Practical-Advancing-Career-Standing-ebook/dp/B005NKH84S/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/rise-3-practical-steps-for-advancing-your-career-standing-out-as-a-leader-and-liking-your-life.jpg" alt="Cover of Rise: 3 Practical Steps for Advancing Your Career, Standing Out as a Leader, and Liking Your Life" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Rise-Practical-Advancing-Career-Standing-ebook/dp/B005NKH84S/" target="_blank" rel="noopener">Rise: 3 Practical Steps for Advancing Your Career, Standing Out as a Leader, and Liking Your Life</a>
+            <p class="book-note">by Patty Azzarello.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Advantage-Enhanced-Organizational-Everything-Business-ebook/dp/B006ORWT3Y/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-advantage-why-organizational-health-trumps-everything-else-in-business.jpg" alt="Cover of The Advantage: Why Organizational Health Trumps Everything Else in Business" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Advantage-Enhanced-Organizational-Everything-Business-ebook/dp/B006ORWT3Y/" target="_blank" rel="noopener">The Advantage: Why Organizational Health Trumps Everything Else in Business</a>
+            <p class="book-note">by Patrick Lencioni.</p>
+          </div>
+        </li></ul><h2 class="papers-group">Consulting and Soft Skills</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Secrets-Consulting-Giving-Getting-Successfully-ebook/dp/B004J35LHQ/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-secrets-of-consulting-a-guide-to-giving-and-getting-advice-successfully.jpg" alt="Cover of The Secrets of Consulting: A Guide to Giving and Getting Advice Successfully" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Secrets-Consulting-Giving-Getting-Successfully-ebook/dp/B004J35LHQ/" target="_blank" rel="noopener">The Secrets of Consulting: A Guide to Giving and Getting Advice Successfully</a>
+            <p class="book-note">by Gerald Weinberg.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Getting-Naked-Business-Shedding-Sabotage/dp/0787976393" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/getting-naked-a-business-fable-about-shedding-the-three-fears-that-sabotage-client-loyalty.jpg" alt="Cover of Getting Naked: A Business Fable About Shedding The Three Fears That Sabotage Client Loyalty" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Getting-Naked-Business-Shedding-Sabotage/dp/0787976393" target="_blank" rel="noopener">Getting Naked: A Business Fable About Shedding The Three Fears That Sabotage Client Loyalty</a>
+            <p class="book-note">by Patrick Lencioni.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Goal-Process-Ongoing-Improvement-ebook/dp/B002LHRM2O/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-goal-a-process-of-ongoing-improvement.jpg" alt="Cover of The Goal: A Process of Ongoing Improvement" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Goal-Process-Ongoing-Improvement-ebook/dp/B002LHRM2O/" target="_blank" rel="noopener">The Goal: A Process of Ongoing Improvement</a>
+            <p class="book-note">by Eliyahu Goldratt. Explores how constraint-theory can be used to optimize process and the founding book behind Theory of Constraints (ToC). Its written in the style of a novel. Not a great novel, but great insight into ToC.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/HBRs-Must-Reads-Boxed-Books/dp/1422184056/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/hbrs-10-must-reads-boxed-set-6-books.jpg" alt="Cover of HBR's 10 Must Reads Boxed Set (6 Books)" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/HBRs-Must-Reads-Boxed-Books/dp/1422184056/" target="_blank" rel="noopener">HBR's 10 Must Reads Boxed Set (6 Books)</a>
+            <p class="book-note">A collection of essays with enduring and practical ideas from some of the best minds in the world on strategy, change leadership, managing people, and managing yourself. Selected from publications in the Harvard Business review.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Fierce-Conversations-Achieving-Success-Conversation-ebook/dp/B000P28V2M/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/fierce-conversations-achieving-success-at-work-and-in-life-one-conversation-at-a-time.jpg" alt="Cover of Fierce Conversations: Achieving Success at Work and in Life One Conversation at a Time" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Fierce-Conversations-Achieving-Success-Conversation-ebook/dp/B000P28V2M/" target="_blank" rel="noopener">Fierce Conversations: Achieving Success at Work and in Life One Conversation at a Time</a>
+            <p class="book-note">by Susan Scott. How to say what you need to say, particularly powerful in giving structure to get past conflict aversion. If this sort of tooling is what you&#39;ve been missing, also consider reading <a href="https://www.amazon.com.au/Crucial-Conversations-Tools-Talking-Stakes/dp/1260474186/">Crucial Conversations: Tools for Talking When Stakes are High</a> and <a href="https://www.amazon.com.au/Crucial-Accountability-Resolving-Expectations-Commitments-ebook/dp/B00C4BDRW6">Crucial Accountability: Tools for Resolving Violated Expectations, Broken Commitments, and Bad Behavior</a></p>
+          </div>
+        </li></ul><h2 class="papers-group">Product, Usability &amp; Design</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Principles-Product-Development-Flow-Generation/dp/1935401009/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-principles-of-product-development-flow-second-generation-lean-product-development.jpg" alt="Cover of The Principles of Product Development Flow: Second Generation Lean Product Development" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Principles-Product-Development-Flow-Generation/dp/1935401009/" target="_blank" rel="noopener">The Principles of Product Development Flow: Second Generation Lean Product Development</a>
+            <p class="book-note">by Donald G. Reinertsen. The seminal work on Product development practices and a great insight into Queuing theory applied.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/INSPIRED-Create-Tech-Products-Customers-ebook/dp/B077NRB36N/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/inspired-how-to-create-tech-products-customers-love.jpg" alt="Cover of INSPIRED: How to Create Tech Products Customers Love" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/INSPIRED-Create-Tech-Products-Customers-ebook/dp/B077NRB36N/" target="_blank" rel="noopener">INSPIRED: How to Create Tech Products Customers Love</a>
+            <p class="book-note">by Marty Cagan. A thoughtful approach to product management.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Designing-Mind-Second-Understanding-Guidelines/dp/0124079148/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/designing-with-the-mind-in-mind.jpg" alt="Cover of Designing with the Mind in Mind" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Designing-Mind-Second-Understanding-Guidelines/dp/0124079148/" target="_blank" rel="noopener">Designing with the Mind in Mind</a>
+            <p class="book-note">by Jeff Johnson. An introduction to usability and design, grounding both in how the brain works.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Crucial-Accountability-Paperback-Kerry-Patterson/dp/0071829318/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/dont-make-me-think-a-common-sense-approach-to-web-usability.jpg" alt="Cover of Don't Make Me Think: A Common Sense Approach to Web Usability" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Crucial-Accountability-Paperback-Kerry-Patterson/dp/0071829318/" target="_blank" rel="noopener">Don't Make Me Think: A Common Sense Approach to Web Usability</a>
+            <p class="book-note">by Steve Krug.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Learning-Creating-Using-Knowledge-Facilitative/dp/0415991854/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/learning-creating-and-using-knowledge-concept-maps-as-facilitative-tools-in-schools-and-corporations.jpg" alt="Cover of Learning, Creating, and Using Knowledge: Concept Maps as Facilitative Tools in Schools and Corporations" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Learning-Creating-Using-Knowledge-Facilitative/dp/0415991854/" target="_blank" rel="noopener">Learning, Creating, and Using Knowledge: Concept Maps as Facilitative Tools in Schools and Corporations</a>
+            <p class="book-note">by Joseph D. Novak. A crazy ueful book introducing a powerful tool called &quot;Concept maps&quot; that helps create effective learners. Super useful in all kinds of situations from understanding customers, market fit to software engineering exploration sessions etc.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com.au/Business-Rule-Concepts-Ronald-Ross/dp/0941049140/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/business-rule-concepts.jpg" alt="Cover of Business Rule Concepts" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com.au/Business-Rule-Concepts-Ronald-Ross/dp/0941049140/" target="_blank" rel="noopener">Business Rule Concepts</a>
+            <p class="book-note">by Ronald Ross. The book I wish every business analyst would read. Introduces the concepts of two classes of business rules and how to analyse and manage them.</p>
+          </div>
+        </li></ul><h2 class="papers-group">Misc</h2><ul class="book-list">
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Peopleware-Productive-Projects-Teams-3rd/dp/0321934113/ref=sr_1_1?s=books&ie=UTF8&qid=1532354245&sr=1-1&keywords=peopleware" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/peopleware-productive-projects-and-teams.jpg" alt="Cover of Peopleware: Productive Projects and Teams" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Peopleware-Productive-Projects-Teams-3rd/dp/0321934113/ref=sr_1_1?s=books&ie=UTF8&qid=1532354245&sr=1-1&keywords=peopleware" target="_blank" rel="noopener">Peopleware: Productive Projects and Teams</a>
+            <p class="book-note">by DeMarco and Lister. The book that has given generations of developers permissions to speak on the challenges of space planning and open offices. Particularly powerful in grounding the discussion in data.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/ALL-NEW-Dont-Think-Elephant-ebook/dp/B00NP9LHFA" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:242" aria-hidden="true">D</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/ALL-NEW-Dont-Think-Elephant-ebook/dp/B00NP9LHFA" target="_blank" rel="noopener">Don't Think of An Elephant! Know Your Values and Frame the Debate</a>
+            <p class="book-note">by George Lakoff. Written from a political perspective that some might find challenging, this book completely changes how to think about presenting ideas.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Slack-Getting-Burnout-Busywork-Efficiency-ebook/dp/B004SOVC2Y/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/slack-getting-past-burnout-busywork-and-the-myth-of-total-efficiency.jpg" alt="Cover of Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Slack-Getting-Burnout-Busywork-Efficiency-ebook/dp/B004SOVC2Y/" target="_blank" rel="noopener">Slack: Getting Past Burnout, Busywork, and the Myth of Total Efficiency</a>
+            <p class="book-note">by Tom DeMarco. Documents a compelling case for middle managers as the critical layer where organizational memory rests and learning occurs. A meditation on the gap between efficiency and effectiveness.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Psychology-Computer-Programming-Silver-Anniversary-ebook/dp/B004R9QACC/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/the-psychology-of-computer-programming.jpg" alt="Cover of The Psychology Of Computer Programming" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Psychology-Computer-Programming-Silver-Anniversary-ebook/dp/B004R9QACC/" target="_blank" rel="noopener">The Psychology Of Computer Programming</a>
+            <p class="book-note">by Gerald Weinberg.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Who-Gets-What-Why-Matchmaking/dp/0544705289/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb"><img src="../covers/who-gets-what-and-why-the-new-economics-of-matchmaking-and-market-design.jpg" alt="Cover of Who Gets What ― and Why: The New Economics of Matchmaking and Market Design" loading="lazy" /></span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Who-Gets-What-Why-Matchmaking/dp/0544705289/" target="_blank" rel="noopener">Who Gets What ― and Why: The New Economics of Matchmaking and Market Design</a>
+            <p class="book-note">by Alvin E. Roth. Fascinating book from a Nobel prize winner in economics. Most of the study of economics deals with commodity markets, where the price of a good connects sellers and buyers. But what about other kinds of &quot;goods&quot; like those in matching markets, where &quot;sellers&quot; and &quot;buyers&quot; must choose each other, and price isn&#39;t the only factor determining who gets what. Great read.</p>
+          </div>
+        </li>
+        <li class="book-row">
+          <a class="book-cover-link" href="https://www.amazon.com/Myth-Revisited-Small-Businesses-About-ebook/dp/B000RO9VJK/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="book-thumb" style="--hue:138" aria-hidden="true">T</span></a>
+          <div class="book-body">
+            <a class="book-title" href="https://www.amazon.com/Myth-Revisited-Small-Businesses-About-ebook/dp/B000RO9VJK/" target="_blank" rel="noopener">The E-Myth Revisited: Why Most Small Businesses Don't Work and What to Do About It</a>
+            <p class="book-note">by Michael Gerber. The idea that leadership is usually working &quot;on&quot; the business, not &quot;in&quot; the business. Work in the business to learn how it works, but then document the system and hand it off.</p>
+          </div>
+        </li></ul>
     </section>
 
     <footer class="footer">
@@ -88,6 +490,6 @@
     </footer>
   </main>
 
-  <script src="/main.js" defer></script>
+  <script src="../main.js" defer></script>
 </body>
 </html>

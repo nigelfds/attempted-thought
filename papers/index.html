@@ -12,7 +12,7 @@
     href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&f[]=gambetta@400,500,600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
   <!-- Theme toggle: default follows the OS; click to override to light. -->
@@ -28,32 +28,37 @@
   <nav class="rail" aria-label="Primary">
     <ul>
       <li>
-        <a href="/" data-label="About" aria-label="About">
+        <a href="../" data-nav="home" data-label="About" aria-label="About">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </a>
       </li>
       <li>
-        <a href="/blog/" data-label="Blog" aria-label="Blog">
+        <a href="../blog/" data-label="Blog" aria-label="Blog">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 17a2 2 0 0 0-2-2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></svg>
         </a>
       </li>
       <li>
-        <a href="/projects/" data-label="Projects" aria-label="Projects">
+        <a href="../projects/" data-label="Projects" aria-label="Projects">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
         </a>
       </li>
       <li>
-        <a href="/books/" data-label="Books" aria-label="Books I like">
+        <a href="../books/" data-label="Books" aria-label="Books I like">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
         </a>
       </li>
       <li>
-        <a href="/papers/" data-label="Papers" aria-label="Papers I've read">
+        <a href="../papers/" data-label="Papers" aria-label="Papers I've read">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
         </a>
       </li>
       <li>
-        <a href="/contact/" data-label="Contact" aria-label="Contact">
+        <a href="../talks/" data-label="Talks" aria-label="Past talks and presentations">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../contact/" data-label="Contact" aria-label="Contact">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-3.5 7.1"/></svg>
         </a>
       </li>
@@ -61,25 +66,325 @@
   </nav>
 
   <main>
-    <section class="section section--page">
+    <section class="section section--page papers-page">
       <h1>Papers I've read<span class="period">.</span></h1>
-      <p class="section-note">Research that shaped how I think.</p>
-      <ul class="entry-list">
-        <li class="entry">
-          <a href="#">
-            <span class="entry-title">Title of the paper</span>
-            <span class="entry-meta">Authors, Venue ’YY</span>
-          </a>
-          <p class="entry-desc">A sentence on the key idea or why it matters.</p>
-        </li>
-        <li class="entry">
-          <a href="#">
-            <span class="entry-title">Another paper</span>
-            <span class="entry-meta">Authors, Venue ’YY</span>
-          </a>
-          <p class="entry-desc">A sentence on the key idea or why it matters.</p>
-        </li>
-      </ul>
+      <p class="papers-intro">Technical discussions where a group of folks sit down and talk about interesting technical papers is probably one of the best ways to build a robust learning community. One of the first steps to do that is identifying some papers worth chatting about that can create lively discussion. Most of the suggestions below have come via the excellent list from <a href="https://lethain.com/about/">Will Larson</a> the author of <a href="https://www.amazon.com/Elegant-Puzzle-Systems-Engineering-Management/dp/1732265186">An Elegant Puzzle</a></p><h2 class="papers-group">The must reads</h2><ul class="paper-list">
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="http://www.laputan.org/mud/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:85%;--gld:28%" aria-hidden="true">B</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="http://www.laputan.org/mud/" target="_blank" rel="noopener">Big Ball of Mud</a>
+              <p class="paper-note">or <a href="https://s3.amazonaws.com/systemsandpapers/papers/bigballofmud.pdf">PDF</a> Probably the best paper on system architecture in the real world ever.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:82%;--gld:24%" aria-hidden="true">F</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm" target="_blank" rel="noopener">Fielding's REST Paper</a>
+              <p class="paper-note">The full orignal can be found <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf">here</a>. Its also worth reading <a href="https://twobithistory.org/2020/06/28/rest.html">Roy Fielding&#39;s Misappropriated REST Dissertation</a> for context on how REST is often abused in the real world.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/hamilton.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:86%;--gld:25%" aria-hidden="true">O</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/hamilton.pdf" target="_blank" rel="noopener">On Designing and Deploying Internet-Scale Services</a>
+              <p class="paper-note">The system-to-administrator ratio is commonly used as a rough metric to understand administrative costs in high-scale services. With smaller, less automated services this ratio can be as low as 2:1, whereas on industry leading, highly automated services, there are ratios as high as 2,500:1.  Services that are operations friendly require little human intervention, and both detect and recover from all but the most obscure failures without administrative intervention. This paper summarizes the best practices accumulated over many years in scaling some of the largest services at MSN and Windows Live. This is a true checklist of how to design and evaluate large scale systems (almost like <a href="https://12factor.net/">The Twelve Factor App</a> wants to be for a checklist for operable applications).</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:89%;--gld:31%" aria-hidden="true">C</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed" target="_blank" rel="noopener">CAP Twelve Years Later: How the Rules Have Changed</a>
+              <p class="paper-note">Eric Brewer posited the <a href="https://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a> in the early 2000s, and twelve years later he wrote this excellent overview and review of CAP (which argues distributed systems have to pick between either availability or consistency during partitions), in part because: In the decade since its introduction, designers and researchers have used (and sometimes abused) the CAP theorem as a reason to explore a wide variety of novel distributed systems. The NoSQL movement also has applied it as an argument against traditional databases. CAP is interesting because there is not a &quot;seminal CAP paper&quot;, but this article serves well in such a paper&#39;s stead. These ideas are expanded on in the <em>Harvest and Yield paper</em> below.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:91%;--gld:27%" aria-hidden="true">H</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/FOX_Brewer_99-Harvest_Yield_and_Scalable_Tolerant_Systems.pdf" target="_blank" rel="noopener">Harvest, Yield, and Scalable Tolerant Systems</a>
+              <p class="paper-note">This paper builds on the concepts from CAP Twelve Years Later, introducing the concepts of harvest and yield to add more nuance to the AP vs CP discussion. The harvest and yield concepts are particularly interesting because they are both self-evidence and very rarely explicitly used, instead distributed systems continue to fail in mostly undefined ways.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37755.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:91%;--gld:27%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37755.pdf" target="_blank" rel="noopener">Searching for Build Debt: Experiences Managing Technical Debt at Google</a>
+              <p class="paper-note">This paper is an interesting cover of how to perform large-scale migrations in living codebases. Google software engineers are constantly paying interest on various forms of technical debt. Google engineers also make efforts to pay down that debt, whether through special Fixit days, or via dedicated teams, variously known as janitors, cultivators, or demolition experts. The paper describe several related efforts to measure and pay down technical debt found in Google&#39;s BUILD files and associated dead code. It also addresses debt found in dependency specifications, unbuildable targets, and unnecessary command line flags. These efforts often expose other forms of technical debt that must first be managed. Using broken builds as the running example, they break down their strategy to three pillars: automation, make it easy to do the right thing, and make it hard to do the wrong thing.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/amazon-dynamo-sosp2007.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:80%;--gld:24%" aria-hidden="true">D</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/amazon-dynamo-sosp2007.pdf" target="_blank" rel="noopener">Dynamo: Amazon's Highly Available Key-value Store</a>
+              <p class="paper-note">This paper is a phenomenal introduction to eventual consistency, coordinating state across distributed storage, reconciling data as it diverges across replicas and much more.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/design-container-based-systems.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:89%;--gld:28%" aria-hidden="true">D</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/design-container-based-systems.pdf" target="_blank" rel="noopener">Design patterns for container-based distributed systems</a>
+              <p class="paper-note">The move to containers-based deployment and orchestration has introduced a whole new set of vocabulary like sidecars and adapters, and this paper provides a survey of the patterns which have evolved over the past decade as microservices and containers have become increasingly prominent infrastructure components The &quot;sidecar&quot; term in particular likely originated in <a href="http://techblog.netflix.com/2014/11/prana-sidecar-for-your-netflix-paas.html">this blog post from Netflix</a>, which is a worthy read in its own right.</p>
+            </div>
+          </li></ul><h2 class="papers-group">The best of the rest</h2><ul class="paper-list">
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/acrobat-17.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:88%;--gld:25%" aria-hidden="true">H</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/acrobat-17.pdf" target="_blank" rel="noopener">Hints for Computer System Design</a>
+              <p class="paper-note"><a href="https://en.wikipedia.org/wiki/Butler_Lampson">Butler Lampson</a> is an ACM Turning Award winner (among other awards), and worked at the Xerox PARC. This paper concisely summarizes many of his ideas around system design, and is a great read.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/gfs.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:84%;--gld:23%" aria-hidden="true">T</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/gfs.pdf" target="_blank" rel="noopener">The Google File System</a>
+              <p class="paper-note">The inspiration for the ground breaking Hadoop File system.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/mapreduce.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:86%;--gld:28%" aria-hidden="true">M</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/mapreduce.pdf" target="_blank" rel="noopener">MapReduce: Simplified Data Processing on Large Clusters</a>
+              <p class="paper-note">The MapReduce paper is an excellent example of an idea which has been so successful that it now seems self-evident. The idea of applying the concepts of functional programming at scale became a clarion call, provoking a shift from data warehousing to a new paradigm for data analysis, this paper was itself a major inspiration for Hadoop.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/dapper.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:89%;--gld:27%" aria-hidden="true">D</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/dapper.pdf" target="_blank" rel="noopener">Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a>
+              <p class="paper-note">The Dapper paper introduces a performant approach to tracing requests across many services, which has become increasingly relevant as more companies refactor core monolithic applications into dozens or hundreds of micro-services. Introduces the design of Dapper, Google&#39;s production distributed systems tracing infrastructure, and describes how the design goals of low overhead, application-level transparency, and ubiquitous deployment on a very large scale system were met. Dapper shares conceptual similarities with other tracing systems, particularly Magpie and X-Trace. However certain design choices were made that have been key to its success, such as the use of sampling and restricting the instrumentation to a rather small number of common libraries. The ideas from Dapper have since made their way into open source, especially in <a href="http://zipkin.io/">Zipkin</a> and <a href="http://opentracing.io/">OpenTracing</a>.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/Kafka.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:86%;--gld:27%" aria-hidden="true">K</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/Kafka.pdf" target="_blank" rel="noopener">Kafka: a Distributed Messaging System for Log Processing</a>
+              <p class="paper-note"><a href="https://kafka.apache.org/">Apache Kafka</a> has become a core piece of infrastructure for many internet companies. It&#39;s versatility lends it to many roles, serving as the ingress point to &quot;data land&quot; for some, a durable queue for others, and that&#39;s just scratching the surface. Not only a useful addition to your toolkit, Kafka is also a beautifully designed system. In particular, Kafka&#39;s partitions do a phenomenal job of forcing application designers to make explicit tradeoffs about trading off performance for predictable message ordering.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/wormhole.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:92%;--gld:21%" aria-hidden="true">W</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/wormhole.pdf" target="_blank" rel="noopener">Wormhole: Reliable Pub-Sub to Support Geo-replicated Internet Services</a>
+              <p class="paper-note">In many ways similar to Kafka, Facebook&#39;s Wormhole is another highly scalable approach to messaging. In particular, note the approach to supporting lagging consumers without sacrificing overall system throughput.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="http://queue.acm.org/detail.cfm?id=2898444" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:90%;--gld:22%" aria-hidden="true">B</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="http://queue.acm.org/detail.cfm?id=2898444" target="_blank" rel="noopener">Borg, Omega, and Kubernetes</a>
+              <p class="paper-note">While the individual papers for each of Google&#39;s orchestration systems (Borg, Omega and Kubernetes) are worth reading in their own right, this article is an excellent overview of the three. This article describes the lessons learned from developing and operating them.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/borg.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:87%;--gld:31%" aria-hidden="true">L</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/borg.pdf" target="_blank" rel="noopener">Large-scale cluster management at Google with Borg</a>
+              <p class="paper-note">Borg has been orchestrating much of Google&#39;s infrastructure for quite some time (significantly predating Omega, although fascinatingly the Omega paper predates the Borg paper by two years). Google&#39;s Borg system is a cluster manager that runs hundreds of thousands of jobs, from many thousands of different applications, across a number of clusters each with up to tens of thousands of machines. This paper takes a look at Borg&#39;s centralized scheduling model, which was both effective and efficient, although it became increasingly challenging to modify and scale over time, inspiring both Omega and Kubernetes within Google (the former to optimistically replace it, and the later seemingly to commercialize their learnings, or at least prevent Mesos from capturing too much mindshare).</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/omega.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:85%;--gld:21%" aria-hidden="true">O</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/omega.pdf" target="_blank" rel="noopener">Omega: flexible, scalable schedulers for large compute clusters</a>
+              <p class="paper-note">Omega is, among many other things, an excellent example of the <a href="http://catb.org/jargon/html/S/second-system-effect.html">second-system effect</a>, where an attempt to replace a complex existing system with something far more elegant ends up being more challenging than anticipated. In particular, Omega is a reaction against the realities of extending the aging Borg system. Perhaps also an example of <a href="https://www.jwz.org/doc/worse-is-better.html">worse is better</a> once again taking the day.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/mesos.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:88%;--gld:22%" aria-hidden="true">M</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/mesos.pdf" target="_blank" rel="noopener">Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center</a>
+              <p class="paper-note">This paper describes the design of <a href="http://mesos.apache.org/">Apache Mesos</a>, in particular its distinctive two-level scheduler. Used heavily by Twitter and Apple, Mesos was for some time the only open-source general scheduler with significant adoption, and is now in a fascinating competition for mindshare with Kubernetes.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/raft.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:89%;--gld:28%" aria-hidden="true">R</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/raft.pdf" target="_blank" rel="noopener">Raft: In Search of an Understandable Consensus Algorithm</a>
+              <p class="paper-note">and <a href="https://s3.amazonaws.com/systemsandpapers/papers/paxos-made-simple.pdf">Paxos Made Simple</a>. Rather complex papers on concensus algorithms. Raft is simpler and is used by <a href="https://github.com/coreos/etcd">etcd</a> and <a href="https://www.influxdata.com/">influxdb</a> among many others. Paxos is a deeply innovative concept, and is the algorithm behind Google&#39;s Chubby and <a href="https://zookeeper.apache.org/">Apache Zookeeper</a>, among many others.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/swim.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:85%;--gld:28%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/swim.pdf" target="_blank" rel="noopener">SWIM: Scalable Weakly-consistent Infection-style Process Group Membership Protocol</a>
+              <p class="paper-note">The majority of consensus algorithms focus on being consistent during partition, but SWIM goes the other direction and focuses on availability. Several distributed peer-to-peer applications require weakly-consistent knowledge of process group membership information at all participating processes. SWIM is a generic software module that offers this service for large scale process groups. The SWIM effort is motivated by the unscalability of traditional heart-beating protocols, which either impose network loads that grow quadratically with group size, or compromise response times or false positive frequency w.r.t. detecting process crashes. This paper reports on the design, implementation and performance of the SWIM sub-system on a large cluster of commodity PCs. SWIM is used in Hashicorp&#39;s software, as well as <a href="http://uber.github.io/ringpop/">Uber&#39;s Ringpop</a>.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/outofthetarpit.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:81%;--gld:26%" aria-hidden="true">O</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/outofthetarpit.pdf" target="_blank" rel="noopener">Out of the Tar Pit</a>
+              <p class="paper-note">Out of the Tar Pit bemoans unnecessary complexity in software, and proposes that that functional programming and better data modeling can help us reduce accidental complexity (arguing that most unnecessary complexity comes from state). Certainly a good read. Reading it a decade later it&#39;s fascinating to see that neither of those approaches have taken off. Instead the closest &quot;universal&quot; approach to reducing complexity seems to be the move to numerous mostly stateless services. Which is perhaps more a reduction of <em>local complexity</em>, at the expense of larger systemic complexity, whose maintenance is then delegated to more specialized systems engineers.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:85%;--gld:30%" aria-hidden="true">B</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf" target="_blank" rel="noopener">Bigtable: A Distributed Storage System for Structured Data</a>
+              <p class="paper-note">One of Google&#39;s preeminent papers and technologies is Bigtable, which was an early (early in the internet era, anyway) NoSQL datastore, operating at extremely high scale and built on top of <a href="https://s3.amazonaws.com/systemsandpapers/papers/chubby-osdi06.pdf">Chubby</a>. From the SSTable design to the bloom filters, Cassandra inherits significantly from the Bigtable paper, and is probably rightfully considered a merging of the Dynamo and Bigtable papers.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44915.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:87%;--gld:29%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44915.pdf" target="_blank" rel="noopener">Spanner: Google's Globally-Distributed Database</a>
+              <p class="paper-note">Where many early NoSQL storage systems traded eventual consistency for increased resiliency, building on top of eventually consistent systems can be harrowing. Spanner represents an approach from Google to offering both strong consistency and distributed reliability, relying in part on a novel approach to managing time.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45409.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:81%;--gld:23%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45409.pdf" target="_blank" rel="noopener">Security Keys: Practical Cryptographic Second Factors for the Modern Web</a>
+              <p class="paper-note"><a href="https://en.wikipedia.org/wiki/YubiKey">Security keys like the YubiKey</a> have emerged as the most secure second authentication factor, and this paper out of Google explains the motivations that lead to their creation, and the design that makes them work. They&#39;re also remarkably cheap.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44860.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:85%;--gld:21%" aria-hidden="true">B</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44860.pdf" target="_blank" rel="noopener">BeyondCorp: Design to Deployment at Google</a>
+              <p class="paper-note">Building on the <a href="https://www.usenix.org/system/files/login/articles/login_dec14_02_ward.pdf">original BeyondCorp paper</a> in 2014, this paper is slightly more detailed and benefits from two more years of migration-fueled wisdom. That said, the big ideas have remained fairly consistent and there is not much new relative to the BeyondCorp paper itself.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36737.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:86%;--gld:28%" aria-hidden="true">A</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36737.pdf" target="_blank" rel="noopener">Availability in Globally Distributed Storage Systems</a>
+              <p class="paper-note">This paper explores how to think about availability in replicated distributed systems, and is a useful starting point for those of us who are trying to determine the correct way to measure uptime for their storage layer or any other sufficiently complex system. A simple definition of availability was in this case: A storage node becomes unavailable when it fails to respond positively to periodic health checking pings sent by our monitoring system. The node remains unavailable until it regains responsiveness or the storage system reconstructs the data from other surviving nodes. Often discussions of availability become arbitrarily complex so this is a good exmaple of simplicity.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/39983.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:83%;--gld:30%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/39983.pdf" target="_blank" rel="noopener">Still All on One Server: Perforce at Scale</a>
+              <p class="paper-note">This paper is particularly good at considering the difficulties that companies run into scaling Git monorepos.</p>
+            </div>
+          </li>
+          <li class="paper-row">
+            <a class="paper-thumb-link" href="https://s3.amazonaws.com/systemsandpapers/papers/sofsem10.pdf" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="paper-thumb paper-thumb--gray" style="--gl:88%;--gld:27%" aria-hidden="true">S</span></a>
+            <div class="paper-body">
+              <a class="paper-title" href="https://s3.amazonaws.com/systemsandpapers/papers/sofsem10.pdf" target="_blank" rel="noopener">Source Code Rejuvenation is not Refactoring</a>
+              <p class="paper-note">This paper introduces the concept of &quot;Code Rejuvenation&quot;, a unidirectional process of moving towards cleaner abstractions as new language features and libraries become available, which is particularly applicable to sprawling, older code bases. There are some strong echoes of this work in <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41342.pdf">Google&#39;s ClangMR paper</a>.</p>
+            </div>
+          </li></ul><h2 class="papers-group">Additional amazing papers</h2><ul class="paper-grid">
+          <li class="paper-card">
+            <a href="https://www.allthingsdistributed.com/files/p1041-verbitski.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">A</span>
+              <span class="paper-card-title">Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://research.fb.com/wp-content/uploads/2017/10/sosp17-final14.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">C</span>
+              <span class="paper-card-title">Canopy: An End-to-End Performance Tracing And Analysis System</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://www.cs.utexas.edu/~lorenzo/corsi/cs380d/papers/p225-chandra.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">U</span>
+              <span class="paper-card-title">Unreliable Failure Detectors for Reliable Distributed Systems</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://hal.inria.fr/inria-00397981/document" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">C</span>
+              <span class="paper-card-title">CRDTs: Consistency without concurrency control</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://db.cs.berkeley.edu/papers/UCB-lattice-tr.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">L</span>
+              <span class="paper-card-title">Logic and Lattices for Distributed Programming</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://pdfs.semanticscholar.org/b02c/6b00bd5dbdbd951fddb00b906c82fa80f0b3.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">Z</span>
+              <span class="paper-card-title">Zab: High-performance broadcast for primary-backup systems</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://static.googleusercontent.com/media/research.google.com/en//archive/paxos_made_live.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">P</span>
+              <span class="paper-card-title">Paxos Made Live - An Engineering Perspective</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://christophermeiklejohn.com/publications/hotedge-2018-preprint.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">T</span>
+              <span class="paper-card-title">Towards a Solution to the Red Wedding Problem</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://research.google.com/pubs/pub44271.html" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">P</span>
+              <span class="paper-card-title">Profiling a warehouse-scale computer</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://research.google.com/pubs/pub36575.html" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">G</span>
+              <span class="paper-card-title">Google-Wide Profiling: A Continuous Profiling Infrastructure for Data Centers</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://delivery.acm.org/10.1145/1650000/1646374/p66-bessey.pdf?ip=67.170.235.99&id=1646374&acc=OPEN&key=4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35%2E6D218144511F3437&__acm__=1523208080_0e8b4d3f89204b7f865ffb5e4c8675df" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">A</span>
+              <span class="paper-card-title">A Few Billion Lines of Code Later: Using Static Analysis to Find Bugs in the Real World</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">R</span>
+              <span class="paper-card-title">Rules of Machine Learning: Best Practices for ML Engineering</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://hal.inria.fr/file/index/docid/555588/filename/techreport.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">A</span>
+              <span class="paper-card-title">A comprehensive study of Convergent and Commutative Replicated Data Types</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41376.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">O</span>
+              <span class="paper-card-title">Online, Asynchronous Schema Change in F1</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://amturing.acm.org/p558-lamport.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">T</span>
+              <span class="paper-card-title">Time, Clocks and the Ordering of Events in a Distributed System</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://www.cs.yale.edu/homes/dna/vldb.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">C</span>
+              <span class="paper-card-title">C-Store: A Column-oriented DBMS</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://adrianmarriott.net/logosroot/papers/LifeBeyondTxns.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">L</span>
+              <span class="paper-card-title">Life beyond Distributed Transactions: an Apostate's Opinion</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://cidrdb.org/cidr2015/Papers/CIDR15_Paper16.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">I</span>
+              <span class="paper-card-title">Immutability Changes Everything</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="https://www.cse.buffalo.edu/~stevko/courses/cse704/fall10/papers/eurosys07.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">D</span>
+              <span class="paper-card-title">Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks</span>
+            </a>
+          </li>
+          <li class="paper-card">
+            <a href="http://bio.cs.washington.edu/blast.pdf" target="_blank" rel="noopener">
+              <span class="paper-thumb paper-thumb--plain" aria-hidden="true">B</span>
+              <span class="paper-card-title">Basic Local Alignment Search Tool</span>
+            </a>
+          </li></ul>
     </section>
 
     <footer class="footer">
@@ -87,6 +392,6 @@
     </footer>
   </main>
 
-  <script src="/main.js" defer></script>
+  <script src="../main.js" defer></script>
 </body>
 </html>
