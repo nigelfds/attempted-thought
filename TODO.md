@@ -30,9 +30,14 @@ Tracking progress on Nigel's personal site.
 - [ ] About: real bio + correct social links
 - [ ] Blog: replace the 3 sample posts in `src/posts/` with real ones
 - [ ] Projects: real projects, descriptions, links, tags
-- [ ] Books I like: real list
-- [ ] Papers I've read: real list (+ links)
+- [x] Books I like: imported from about-me/Books.md → `src/data/books.md`
+      (48/59 real covers via Open Library, 11 monogram fallbacks)
+- [x] Papers I've read: imported from about-me/Papers.md → `src/data/papers.md`
+- [x] Past talks & presentations: new section from SlideShare → `src/data/talks.md` (15 talks)
+- [x] LinkedIn + GitHub links updated across the site (X handle still TODO)
 - [ ] Contact: confirm/extend the links
+- [ ] Books: chase covers for the 11 monogram fallbacks if desired
+      (e.g. High Output Management, The Google SRE Book, Designing with the Mind in Mind)
 
 ## 🚀 Launch
 

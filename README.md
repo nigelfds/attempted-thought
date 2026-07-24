@@ -32,10 +32,13 @@ the static site into `public/`, which is what GitHub Pages serves.
 │   │   ├── projects.html  #   /projects/
 │   │   ├── books.html     #   /books/
 │   │   ├── papers.html    #   /papers/
+│   │   ├── talks.html     #   /talks/
 │   │   └── contact.html   #   /contact/
 │   ├── posts/             # Markdown blog posts → /blog/<filename>/
 │   │   └── *.md
-│   └── assets/            # styles.css, main.js (copied verbatim to public/)
+│   ├── data/              # papers.md, books.md (parsed into cards)
+│   └── assets/            # styles.css, main.js, covers/ (copied to public/)
+├── scripts/fetch-covers.mjs   # one-time: download book covers (Open Library)
 ├── build.js               # src/ → public/  (npm run build)
 ├── server.js              # Express preview server (NOT used in production)
 ├── .githooks/pre-push     # builds + deploys to gh-pages on `git push`
@@ -91,6 +94,19 @@ npm start        # builds, then serves → http://localhost:3000
 
   Posts are sorted newest-first; the 3 most recent appear on the home page and
   all of them on `/blog/`.
+- **Papers, Books & Talks:** edit the Markdown lists in `src/data/papers.md`,
+  `src/data/books.md`, and `src/data/talks.md`. The build parses them into styled
+  cards. Books show a
+  cover image when one exists in `src/assets/covers/<book-slug>.jpg`, otherwise a
+  generated monogram tile. To (re)download covers from the Open Library API:
+
+  ```bash
+  node scripts/fetch-covers.mjs          # fills in any missing covers
+  node scripts/fetch-covers.mjs --force  # re-fetch all
+  ```
+
+  Anything it can't find stays a monogram — drop a JPEG in `src/assets/covers/`
+  yourself to override. Papers fall back to a monogram tile too (no images).
 - **Shared chrome** (nav, fonts, footer, theme toggle): edit `src/layout.html`
   once — it applies to every page.
 - **Styling:** edit the CSS custom properties at the top of `src/assets/styles.css`

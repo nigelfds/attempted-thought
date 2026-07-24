@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# pre-push hook — build the site and publish ./public to the gh-pages branch.
+#
+# Best-effort by design: this NEVER blocks the push to main. If the build or the
+# gh-pages deploy fails, it just warns and lets your push proceed. Runs only when
+# pushing main/master.
+#
+# Git passes the remote name as $1 and its URL as $2.
+
+remote_name="$1"
+remote_url="$2"
+
+branch="$(git symbolic-ref --short HEAD 2>/dev/null || true)"
+case "$branch" in
+  main|master) ;;
+  *)
+    echo "pre-push: on '$branch' (not main/master) — skipping gh-pages deploy."
+    exit 0
+    ;;
+esac
+
+# Make nvm's Node available to the hook if it isn't already on PATH.
+if ! command -v node >/dev/null 2>&1 && [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh"
+  nvm use >/dev/null 2>&1 || true
+fi
+
+echo "pre-push: building site → public/"
+if ! npm run build; then
+  echo "pre-push: build failed — skipping gh-pages deploy (push will proceed)." >&2
+  exit 0
+fi
+
+# Publish to the same remote we're pushing to (fall back to origin's URL).
+target="${remote_url:-$(git remote get-url "${remote_name:-origin}" 2>/dev/null)}"
+if [ -z "$target" ]; then
+  echo "pre-push: no remote URL found — skipping gh-pages deploy." >&2
+  exit 0
+fi
+
+echo "pre-push: publishing public/ → gh-pages on $target"
+if [ -x node_modules/.bin/gh-pages ]; then
+  GHP="node_modules/.bin/gh-pages"
+else
+  GHP="npx --yes gh-pages"
+fi
+
+if $GHP -d public -b gh-pages -r "$target"; then
+  echo "pre-push: gh-pages updated ✓"
+else
+  echo "pre-push: gh-pages deploy failed — push to '$branch' will still proceed." >&2
+fi
+
+exit 0
