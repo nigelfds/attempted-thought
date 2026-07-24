@@ -7,3 +7,6 @@ npm-debug.log*
 .DS_Store
 .playwright-mcp/
 ref-*.png
+
+# Local MCP config — contains a machine-specific Node path
+.mcp.json
