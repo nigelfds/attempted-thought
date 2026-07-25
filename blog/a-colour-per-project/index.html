@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>An older note — Nigel</title>
-  <meta name="description" content="A one-line summary of what this post is about." />
+  <title>A colour per project — Nigel</title>
+  <meta name="description" content="A tiny zsh utility that tints each terminal a stable colour per project, so parallel Claude Code sessions stop blurring together." />
 
   <!-- Typography: General Sans + Gambetta (free, via Fontshare CDN) -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
@@ -69,12 +69,51 @@
 
     <article class="section post">
       <p class="eyebrow"><a class="back" href="../../blog/">← Blog</a></p>
-      <h1>An older note<span class="period">.</span></h1>
-      <time class="post-date">January 12, 2026</time>
+      <h1>A colour per project<span class="period">.</span></h1>
+      <time class="post-date">July 3, 2026</time>
+      <img class="post-thumb" src="../../posts/shell-colors.jpg" alt="A colour per project" loading="lazy" />
       <div class="post-body">
-<p>A third placeholder post. Because its date is the oldest of the three, it sits
-at the bottom of the list — and would drop off the home page once you publish a
-fourth, newer post.</p>
+<p>Lately I&#39;ve been running several Claude Code sessions at once — one building a
+feature here, another chewing through a refactor there, a third deploying
+something. It&#39;s a good way to work, but it comes with a small, constant tax: I&#39;d
+glance at a terminal and have no idea <em>which</em> project I was looking at. Every
+window was the same colour, so I&#39;d read a few lines, realise I was in the wrong
+one, and go hunting for the right tab.</p>
+<p>So I made a little thing to fix it.</p>
+<h2>The idea</h2>
+<p>Give every project its own terminal colour, automatically, and keep it stable —
+so &quot;the blue window&quot; is always the same project, &quot;the green one&quot; is always
+another, no matter how many tabs or windows I&#39;ve opened. No config file to keep
+in sync, no picking colours by hand. Just a glance and I know where I am.</p>
+<h2>The result</h2>
+<p><a href="https://github.com/nigelfds/shell-colors"><code>shell-colors</code></a> is a single zsh
+script. Whenever I <code>cd</code> into anything under <code>~/projects/&lt;name&gt;/…</code>, it tints the
+iTerm2 window background based on <code>&lt;name&gt;</code> and leaves the text a light, faintly
+tinted shade of the same hue. Step outside <code>~/projects</code> and it resets to my
+normal profile.</p>
+<p>The colour isn&#39;t random — it&#39;s <em>derived</em> from the project name:</p>
+<ul>
+<li>The folder name is run through <code>cksum</code> to get a stable number.</li>
+<li>That number picks one of four families — blue, purple, maroon, or green —
+then nudges the hue a little so neighbouring projects don&#39;t collide.</li>
+<li>Background lightness lands somewhere around 14–21% (nice and dark), paired
+with a ~90% lightness foreground so it stays readable.</li>
+</ul>
+<p>Because it&#39;s all a pure function of the name, every tab and every window for the
+same project gets the <em>identical</em> colour — even across machines — with no shared
+state to manage. It hooks into zsh&#39;s <code>chpwd</code>, so the colour just follows me
+around as I move between directories.</p>
+<p>There&#39;s a <code>pc-preview</code> command too, which prints a swatch for every folder under
+<code>~/projects</code> in its actual colours, so I can eyeball the whole palette at once.</p>
+<p>The screenshot above is a normal afternoon: four windows, four projects, four
+colours — and I can tell them apart without reading a single word.</p>
+<h2>Try it</h2>
+<p>It&#39;s a copy-one-file-and-source-it install. The
+<a href="https://github.com/nigelfds/shell-colors">README</a> has the details, plus the
+knobs for changing the palette or pointing it at a different projects root. It
+needs iTerm2 (it leans on iTerm&#39;s <code>SetColors</code> escape sequence) and zsh; there&#39;s
+tmux passthrough baked in if you live inside tmux.</p>
+<p>Small utility, disproportionately calming.</p>
 
       </div>
     </article>

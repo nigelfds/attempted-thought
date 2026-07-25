@@ -67,16 +67,20 @@
 
   <main>
     <section id="about" class="section section--hero">
-      <p class="eyebrow">Nigel</p>
-      <h1>Attempted thought<span class="period">.</span></h1>
+      <div class="hero-top">
+        <div class="hero-headline">
+          <p class="eyebrow">Nigel's</p>
+          <h1>Attempted thought<span class="period">.</span></h1>
+        </div>
+        <img class="hero-avatar" src="./nigel.jpg" alt="Illustrated portrait of Nigel" width="112" height="112" loading="eager" />
+      </div>
       <p class="lede">
-        Welcome to my corner of the web — a quiet place where I keep what I'm
-        working on, the things I read, and the occasional written thought.
+        Welcome to my corner of the web — a place where I keep what I'm
+        working on, the things I read, and the occasional written thought. A
+        collection of stuff that may or may not be interesting.
       </p>
       <p>
-        I'm Nigel. <em>(Replace this with a couple of sentences about who you
-        are and what you do.)</em> This site is deliberately minimal: just words,
-        links, and a little room to breathe.
+        <em>I'm Nigel Fernandes, a software engineer, husband, and dad. Sometimes I make stuff from wood, play instruments to make music and design games for kids.</em> 
       </p>
       <p class="inline-links">
         <a href="mailto:nigel@nigel.in">Email</a>
@@ -88,37 +92,53 @@
     <hr class="divider" />
 
     <section id="blog" class="section">
-      <h2>Latest writing<span class="period">.</span></h2>
-      <p class="section-note">A few recent notes, essays, and half-formed ideas.</p>
-      <ul class="entry-list">
-        <li class="entry">
-          <a href="./blog/hello-world/">
-            <span class="entry-title">The title of a first post</span>
-            <time class="entry-meta">May 2026</time>
+      <h2>Latest<span class="period">.</span></h2>
+      <p class="section-note">The most recent things I've written or built.</p>
+      <ul class="feed">
+        <li class="feed-item">
+          <a class="feed-link" href="./blog/a-colour-per-project/">
+            <span class="feed-thumb"><img src="./posts/shell-colors.jpg" alt="" loading="lazy" /></span>
+            <span class="feed-text">
+              <span class="feed-titlerow">
+                <span class="feed-title">A colour per project</span>
+                <span class="feed-meta">Jul 3, 2026<span class="entry-kind">Post</span></span>
+              </span>
+              <span class="feed-desc">A tiny zsh utility that tints each terminal a stable colour per project, so parallel Claude Code sessions stop blurring together.</span>
+            </span>
           </a>
-          <p class="entry-desc">A one-line summary of what this post is about.</p>
         </li>
-        <li class="entry">
-          <a href="./blog/another-thing/">
-            <span class="entry-title">Another thing worth writing down</span>
-            <time class="entry-meta">Mar 2026</time>
+        <li class="feed-item">
+          <a class="feed-link" href="./projects/#drumcoach">
+            <span class="feed-thumb"><img src="./projects/drumcoach.jpg" alt="" loading="lazy" /></span>
+            <span class="feed-text">
+              <span class="feed-titlerow">
+                <span class="feed-title">DrumCoach</span>
+                <span class="feed-meta">Jun 13, 2026<span class="entry-kind">Project</span></span>
+              </span>
+              <span class="feed-desc">An app that listens to you drum and coaches your timing.</span>
+            </span>
           </a>
-          <p class="entry-desc">A one-line summary of what this post is about.</p>
         </li>
-        <li class="entry">
-          <a href="./blog/an-older-note/">
-            <span class="entry-title">An older note</span>
-            <time class="entry-meta">Jan 2026</time>
+        <li class="feed-item">
+          <a class="feed-link" href="./projects/#spell-to-fly">
+            <span class="feed-thumb"><img src="./projects/spell-to-fly.jpg" alt="" loading="lazy" /></span>
+            <span class="feed-text">
+              <span class="feed-titlerow">
+                <span class="feed-title">Spell to Fly</span>
+                <span class="feed-meta">May 27, 2026<span class="entry-kind">Project</span></span>
+              </span>
+              <span class="feed-desc">A geography game where you fly the map by spelling city names.</span>
+            </span>
           </a>
-          <p class="entry-desc">A one-line summary of what this post is about.</p>
         </li></ul>
       <p class="inline-links more-link">
         <a href="./blog/">All posts →</a>
+        <a href="./projects/">All projects →</a>
       </p>
     </section>
 
     <footer class="footer">
-      <p>© <span id="year"></span> Nigel · built with care.</p>
+      <p>© <span id="year"></span> Nigel Fernandes · Built in Melbourne.</p>
     </footer>
   </main>
 
