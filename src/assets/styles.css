@@ -298,6 +298,7 @@ a {
 }
 
 .feed-text {
+  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -312,6 +313,7 @@ a {
 }
 
 .feed-title {
+  min-width: 0;
   font-family: var(--serif);
   font-size: 1.2rem;
   font-weight: 500;
@@ -606,7 +608,8 @@ a {
 }
 
 /* Tooltip label */
-.rail a::after {
+.rail a::after,
+.rail .theme-toggle::after {
   content: attr(data-label);
   position: absolute;
   top: calc(100% + 0.5rem);
@@ -625,15 +628,32 @@ a {
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-.rail a:hover::after {
+.rail a:hover::after,
+.rail .theme-toggle:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
+/* Theme-toggle divider: separates the control from the nav links.
+   Mobile (horizontal rail) = divider on the left; the desktop @media below
+   switches it to the top. Defined before the media query so the override
+   wins on desktop. */
+.rail-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.3rem;
+  padding-left: 0.3rem;
+  border-left: 1px solid var(--rail-border);
+}
+
 @media (min-width: 900px) {
+  /* Float the rail just left of the centered content column, not the window
+     edge. Content starts at (50% - measure/2); sit the rail a little left of
+     that. (Below 900px the horizontal top rail applies instead.) */
   .rail {
     top: 50%;
-    left: 1.5rem;
+    left: calc(50% - var(--measure) / 2 - 4.5rem);
     transform: translateY(-50%);
   }
 
@@ -642,45 +662,52 @@ a {
     gap: 0.15rem;
   }
 
+  /* divider sits above the toggle when the rail is vertical */
+  .rail-toggle {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
+    border-top: 1px solid var(--rail-border);
+  }
+
   /* tooltip moves to the right of the rail */
-  .rail a::after {
+  .rail a::after,
+  .rail .theme-toggle::after {
     top: 50%;
     left: calc(100% + 0.6rem);
     transform: translateY(-50%) translateX(-4px);
   }
 
-  .rail a:hover::after {
+  .rail a:hover::after,
+  .rail .theme-toggle:hover::after {
     transform: translateY(-50%) translateX(0);
   }
 }
 
 /* ─────────────────────────── Theme toggle ───────────────────────────
-   Small button pinned to the top-right. Default state follows the OS
+   Lives as the last item in the rail. Default state follows the OS
    ("auto"); clicking overrides to a forced light theme. */
 
 .theme-toggle {
-  position: fixed;
-  z-index: 50;
-  top: 0.9rem;
-  right: 0.9rem;
+  position: relative;
   display: grid;
   place-items: center;
   width: 2.6rem;
   height: 2.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
   border-radius: 999px;
-  background: var(--rail-bg);
-  border: 1px solid var(--rail-border);
   color: var(--ink);
   cursor: pointer;
-  opacity: 0.6;
-  backdrop-filter: blur(12px) saturate(140%);
-  -webkit-backdrop-filter: blur(12px) saturate(140%);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-  transition: opacity 0.2s ease, color 0.2s ease;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 .theme-toggle:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .theme-toggle svg {

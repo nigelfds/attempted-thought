@@ -20,10 +20,10 @@ if (toggle) {
   function applyTheme(theme) {
     if (theme === "light") {
       root.setAttribute("data-theme", "light");
-      toggle.title = "Theme: light (click to follow system)";
+      toggle.setAttribute("aria-label", "Theme: light (click to follow system)");
     } else {
       root.removeAttribute("data-theme");
-      toggle.title = "Theme: following system (click for light)";
+      toggle.setAttribute("aria-label", "Theme: following system (click for light)");
     }
   }
 
