@@ -89,6 +89,19 @@ const fullDate = (iso) =>
 const escapeHtml = (s) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+// Deterministic hue (0–359) from a string, for the cover-tile color.
+const hueOf = (s) => {
+  let h = 0;
+  for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return h % 360;
+};
+
+// First letter of the title, for the monogram cover.
+const monogram = (title) => {
+  const m = title.match(/[A-Za-z0-9]/);
+  return (m ? m[0] : "#").toUpperCase();
+};
+
 // ── 1. Collect & sort posts ────────────────────────────────────────────────
 const postsDir = join(SRC, "posts");
 const posts = readdirSync(postsDir)
@@ -258,6 +271,7 @@ const feed = [
     date: p.meta.date,
     summary: p.meta.summary || "",
     href: `{{rel}}blog/${p.slug}/`,
+    thumb: p.meta.thumb ? `{{rel}}posts/${p.meta.thumb}` : null,
   })),
   ...projects.map((p) => ({
     kind: "Project",
@@ -265,39 +279,35 @@ const feed = [
     date: p.date,
     summary: p.summary,
     href: `{{rel}}projects/#${p.id}`,
+    thumb: `{{rel}}projects/${p.thumb}`,
   })),
 ].sort((a, b) => (a.date < b.date ? 1 : -1));
 
 const feedItems = (list) =>
   list
-    .map(
-      (item) => `
-        <li class="entry">
-          <a href="${item.href}">
-            <span class="entry-title">${item.title}</span>
-            <time class="entry-meta">${monthYear(item.date)}<span class="entry-kind">${item.kind}</span></time>
+    .map((item) => {
+      const thumb = item.thumb
+        ? `<img src="${item.thumb}" alt="" loading="lazy" />`
+        : `<span class="feed-mono" style="--hue:${hueOf(item.title)}">${monogram(item.title)}</span>`;
+      return `
+        <li class="feed-item">
+          <a class="feed-link" href="${item.href}">
+            <span class="feed-thumb">${thumb}</span>
+            <span class="feed-text">
+              <span class="feed-titlerow">
+                <span class="feed-title">${item.title}</span>
+                <span class="feed-meta">${monthYear(item.date)}<span class="entry-kind">${item.kind}</span></span>
+              </span>
+              <span class="feed-desc">${item.summary}</span>
+            </span>
           </a>
-          <p class="entry-desc">${item.summary}</p>
-        </li>`
-    )
+        </li>`;
+    })
     .join("");
 
-const recentPosts = `<ul class="entry-list">${feedItems(feed.slice(0, 3))}</ul>`;
+const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 3))}</ul>`;
 
 // ── 3b. Papers section (parsed from src/data/papers.md) ─────────────────────
-
-// Deterministic hue (0–359) from a string, for the cover-tile color.
-const hueOf = (s) => {
-  let h = 0;
-  for (const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  return h % 360;
-};
-
-// First letter of the title, for the monogram cover.
-const monogram = (title) => {
-  const m = title.match(/[A-Za-z0-9]/);
-  return (m ? m[0] : "#").toUpperCase();
-};
 
 const coverTile = (title) =>
   `<span class="paper-thumb" style="--hue:${hueOf(title)}" aria-hidden="true">${monogram(title)}</span>`;

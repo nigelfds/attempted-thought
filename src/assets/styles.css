@@ -88,6 +88,48 @@ main {
   padding-top: 0;
 }
 
+/* Hero header: name + title on the left, portrait floated top-right.
+   The portrait is line art on a white disc, so it reads on either ground —
+   only the ring adapts between light and dark. */
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-headline {
+  min-width: 0;
+}
+
+.hero-headline h1 {
+  margin-bottom: 0;
+}
+
+.hero-avatar {
+  flex: none;
+  width: clamp(84px, 22vw, 112px);
+  height: clamp(84px, 22vw, 112px);
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  border: 1px solid var(--hairline);
+  box-shadow: 0 3px 14px rgba(20, 20, 25, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .hero-avatar {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  }
+}
+
+html[data-theme="dark"] .hero-avatar {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
 .divider {
   border: 0;
   border-top: 1px dashed var(--hairline);
@@ -241,6 +283,108 @@ a {
   margin: 0.35rem 0 0;
   color: var(--muted);
   font-size: 0.98rem;
+}
+
+/* Home "Latest" feed — posts + projects with a small thumbnail. */
+.feed {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.feed-link {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.feed-thumb {
+  flex: none;
+  width: 96px;
+  height: 66px;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--hairline);
+  transition: transform 0.2s ease;
+}
+
+.feed-link:hover .feed-thumb {
+  transform: translateY(-2px);
+}
+
+.feed-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feed-mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: #fff;
+  background: hsl(var(--hue, 220) 45% 55%);
+}
+
+.feed-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.feed-titlerow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.feed-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.feed-link:hover .feed-title {
+  color: var(--accent);
+}
+
+.feed-meta {
+  flex: none;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.feed-desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 520px) {
+  .feed-titlerow {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  .feed-desc {
+    -webkit-line-clamp: 1;
+  }
 }
 
 /* ─────────────────────────── Project cards ─────────────────────────── */
