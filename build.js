@@ -137,23 +137,6 @@ ${marked.parse(post.body)}
   );
 }
 
-// ── 3. Build reusable post-list markup ─────────────────────────────────────
-const postListItems = (list) =>
-  list
-    .map(
-      (p) => `
-        <li class="entry">
-          <a href="{{rel}}blog/${p.slug}/">
-            <span class="entry-title">${p.meta.title}</span>
-            <time class="entry-meta">${monthYear(p.meta.date)}</time>
-          </a>
-          <p class="entry-desc">${p.meta.summary || ""}</p>
-        </li>`
-    )
-    .join("");
-
-const allPosts = `<ul class="entry-list">${postListItems(posts)}</ul>`;
-
 // ── 3a. Projects (single source of truth) ──────────────────────────────────
 // The projects page (via {{projects}}) and the home feed both render from this
 // list. `date` is each repo's first commit; `summary` is the short one-liner
@@ -288,7 +271,7 @@ const feedItems = (list) =>
     .map((item) => {
       const thumb = item.thumb
         ? `<img src="${item.thumb}" alt="" loading="lazy" />`
-        : `<span class="feed-mono" style="--hue:${hueOf(item.title)}">${monogram(item.title)}</span>`;
+        : `<span class="feed-mono">${monogram(item.title)}</span>`;
       return `
         <li class="feed-item">
           <a class="feed-link" href="${item.href}">
@@ -296,7 +279,7 @@ const feedItems = (list) =>
             <span class="feed-text">
               <span class="feed-titlerow">
                 <span class="feed-title">${item.title}</span>
-                <span class="feed-meta">${monthYear(item.date)}<span class="entry-kind">${item.kind}</span></span>
+                <span class="feed-meta">${monthYear(item.date)}${item.kind ? `<span class="entry-kind">${item.kind}</span>` : ""}</span>
               </span>
               <span class="feed-desc">${item.summary}</span>
             </span>
@@ -306,6 +289,18 @@ const feedItems = (list) =>
     .join("");
 
 const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 5))}</ul>`;
+
+// Blog index: every post, same thumbnail layout as the feed (no kind pill —
+// they're all posts here).
+const allPosts = `<ul class="feed">${feedItems(
+  posts.map((p) => ({
+    title: p.meta.title,
+    date: p.meta.date,
+    summary: p.meta.summary || "",
+    href: `{{rel}}blog/${p.slug}/`,
+    thumb: p.meta.thumb ? `{{rel}}posts/${p.meta.thumb}` : null,
+  }))
+)}</ul>`;
 
 // ── 3b. Papers section (parsed from src/data/papers.md) ─────────────────────
 
