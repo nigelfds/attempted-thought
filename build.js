@@ -305,7 +305,7 @@ const feedItems = (list) =>
     })
     .join("");
 
-const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 3))}</ul>`;
+const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 5))}</ul>`;
 
 // ── 3b. Papers section (parsed from src/data/papers.md) ─────────────────────
 
