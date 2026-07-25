@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Nigel</title>
-  <meta name="description" content="Things Nigel has built or is tinkering with." />
+  <meta name="description" content="A set of small apps Nigel built for his kids — each a hands-off experiment with Claude Code." />
 
   <!-- Typography: General Sans + Gambetta (free, via Fontshare CDN) -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
@@ -68,28 +68,118 @@
   <main>
     <section class="section section--page">
       <h1>Projects<span class="period">.</span></h1>
-      <p class="section-note">Things I've built or am tinkering with.</p>
-      <ul class="card-list">
-        <li class="card">
-          <a href="#">
-            <span class="card-title">Project one</span>
-            <span class="card-desc">A short description of the project and the problem it solves.</span>
-            <span class="card-tags">Node · TypeScript</span>
+      <p class="section-note">
+        A handful of small apps I built for my kids this past year — each one a
+        hands-off experiment in how far Claude Code can go on its own.
+      </p>
+
+      <ul class="project-list">
+        <li class="project">
+          <a class="project-media" href="https://drumcoach.nig.fm/" target="_blank" rel="noopener">
+            <img src="../projects/drumcoach.jpg" alt="Screenshot of DrumCoach" width="1000" height="625" loading="lazy" />
           </a>
+          <div class="project-body">
+            <p class="project-date">Jun 2026</p>
+            <h2 class="project-title">DrumCoach</h2>
+            <p class="project-desc">
+              I've been learning the drums with my son this year, and we both struggle
+              with timing — so I built an app that listens to us play and coaches it. The
+              goal was something that just works on any phone or laptop, no specialist
+              audio gear: you play near the mic and DrumCoach detects and classifies each
+              hit, notates it on a live drum staff, and measures your timing with feedback
+              ranges tuned to your level. It was great to work with high- and low-pass
+              filters, Fourier transforms, and spectral centroids again — DSP concepts I
+              hadn't touched since my computer-engineering classes. I also got to play
+              with Firestore as a backing store, syncing practice data across devices tied
+              to a real Google identity.
+            </p>
+            <p class="project-tags">Web Audio API · DSP · JavaScript · Firebase/Firestore · GitHub Pages</p>
+            <p class="project-links">
+              <a href="https://drumcoach.nig.fm/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/nigelfds/drumcoach" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
         </li>
-        <li class="card">
-          <a href="#">
-            <span class="card-title">Project two</span>
-            <span class="card-desc">A short description of the project and the problem it solves.</span>
-            <span class="card-tags">Python · ML</span>
+
+        <li class="project">
+          <a class="project-media" href="https://spelltofly.nig.fm/" target="_blank" rel="noopener">
+            <img src="../projects/spell-to-fly.jpg" alt="Screenshot of Spell to Fly" width="1000" height="625" loading="lazy" />
           </a>
+          <div class="project-body">
+            <p class="project-date">May 2026</p>
+            <h2 class="project-title">Spell to Fly</h2>
+            <p class="project-desc">
+              A geography-and-spelling game, and my excuse to work with maps again. I've
+              loved mapping software ever since my Nokia days in Berlin working on Ovi
+              Maps (2009–2010), so I put Claude to the test on map data, pathfinding, and
+              spoken audio. You fly across a region — Europe, Africa, Asia, or the
+              Americas — hopping from city to city by spelling each country and city name
+              hangman-style, guided by text-to-speech pronunciation. Only the territory
+              bordering you is revealed, so you're navigating a hidden graph toward a
+              ticketed destination. I built it to help my kids learn geography and improve
+              their spelling together. Getting the viewport and zoom behaviour right was
+              genuinely hard to do with AI. Something like this would have taken me weeks
+              of full-time work back in Berlin, but this time I had it running in two
+              weekends.
+            </p>
+            <p class="project-tags">Rails · D3.js · TopoJSON · Web Speech API · Natural Earth · Heroku</p>
+            <p class="project-links">
+              <a href="https://spelltofly.nig.fm/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/nigelfds/spell-to-fly" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
         </li>
-        <li class="card">
-          <a href="#">
-            <span class="card-title">Project three</span>
-            <span class="card-desc">A short description of the project and the problem it solves.</span>
-            <span class="card-tags">Design</span>
+
+        <li class="project">
+          <a class="project-media" href="https://mathgrid.nig.fm" target="_blank" rel="noopener">
+            <img src="../projects/mathgrid.jpg" alt="Screenshot of MathGrid" width="1000" height="625" loading="lazy" />
           </a>
+          <div class="project-body">
+            <p class="project-date">May 2026</p>
+            <h2 class="project-title">MathGrid</h2>
+            <p class="project-desc">
+              A real-time multiplayer arithmetic game, and my go at a more ambitious
+              hands-off Claude Code build. It started as a paper card game I made for my
+              kids a year ago; this digital version lets 2+ players race on a shared 6×6
+              grid to find three numbers in a line that satisfy a target formula. I built
+              it partly to sharpen my kids' mental arithmetic and partly so my wife and I
+              could play against them across our own devices. There's a gentler
+              <em>No Multiplication</em> mode for younger players, room codes to join a
+              game, and a leaderboard. The real-time coordination runs on Rails' Action
+              Cable (via Turbo Streams + Redis) — and I made a point of getting it all
+              running on a minimum Heroku spec.
+            </p>
+            <p class="project-tags">Rails · Hotwire · Action Cable · Postgres · Redis · Heroku</p>
+            <p class="project-links">
+              <a href="https://mathgrid.nig.fm" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/nigelfds/maths" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
+        </li>
+
+        <li class="project">
+          <a class="project-media" href="https://spell.nig.fm" target="_blank" rel="noopener">
+            <img src="../projects/spelling-bee.jpg" alt="Screenshot of Spelling Bee" width="1000" height="625" loading="lazy" />
+          </a>
+          <div class="project-body">
+            <p class="project-date">May 2026</p>
+            <h2 class="project-title">Spelling Bee</h2>
+            <p class="project-desc">
+              A hands-off experiment in AI-only coding: I let Claude Code build the
+              whole thing to see how it handles animation, game rules, DB schema
+              design, and deployment. It's a small spelling game aimed at kids aged
+              6–10, where an animated bee fills in with each wrong guess. There's a
+              typed <em>Classic</em> mode and a spoken <em>Voice</em> mode — the latter
+              added to mirror the way my own kids were learning their spelling out loud
+              in school. Words come from the Oxford 3000 (with auto-fetched
+              definitions), and scores land on a leaderboard.
+            </p>
+            <p class="project-tags">Rails · Ruby · Postgres · Heroku</p>
+            <p class="project-links">
+              <a href="https://spell.nig.fm" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/nigelfds/spelling-bee" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
         </li>
       </ul>
     </section>

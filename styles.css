@@ -277,6 +277,82 @@ a {
   text-transform: uppercase;
 }
 
+/* ───────────────────── Project write-ups (with thumbnails) ───────────────────── */
+
+.project-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4rem;
+}
+
+.project {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.project-media {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--card, rgba(0, 0, 0, 0.03));
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 625;
+  object-fit: cover;
+}
+
+.project-media:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.project-date {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.project-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.project-desc {
+  color: var(--ink);
+  margin: 0;
+}
+
+.project-tags {
+  margin: 0.9rem 0 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.project-links {
+  margin: 0.75rem 0 0;
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.project-links a {
+  font-weight: 500;
+}
+
 /* ─────────────────────────── Contact ─────────────────────────── */
 
 .contact-list {
