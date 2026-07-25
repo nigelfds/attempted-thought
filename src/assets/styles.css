@@ -225,6 +225,18 @@ a {
   font-variant-numeric: tabular-nums;
 }
 
+/* Small "Post" / "Project" tag next to the date in the home feed. */
+.entry-kind {
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 0.05em;
+}
+
 .entry-desc {
   margin: 0.35rem 0 0;
   color: var(--muted);
@@ -585,9 +597,20 @@ a {
 
 .post-date {
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+/* Small, decorative post thumbnail — deliberately not enlargeable. */
+.post-thumb {
+  display: block;
+  width: 200px;
+  max-width: 55%;
+  height: auto;
+  margin: 0 0 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--hairline);
 }
 
 .eyebrow .back {

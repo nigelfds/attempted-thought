@@ -69,6 +69,13 @@ function writePage(route, html) {
 const monthYear = (iso) =>
   new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
     month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+const monthYearShort = (iso) =>
+  new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+    month: "short",
     year: "numeric",
   });
 
@@ -78,6 +85,9 @@ const fullDate = (iso) =>
     month: "long",
     year: "numeric",
   });
+
+const escapeHtml = (s) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 // ── 1. Collect & sort posts ────────────────────────────────────────────────
 const postsDir = join(SRC, "posts");
@@ -92,11 +102,14 @@ const posts = readdirSync(postsDir)
 
 // ── 2. Render each post page ────────────────────────────────────────────────
 for (const post of posts) {
+  const thumb = post.meta.thumb
+    ? `\n      <img class="post-thumb" src="{{rel}}posts/${post.meta.thumb}" alt="${escapeHtml(post.meta.title)}" loading="lazy" />`
+    : "";
   const article = `
     <article class="section post">
       <p class="eyebrow"><a class="back" href="{{rel}}blog/">← Blog</a></p>
       <h1>${post.meta.title}<span class="period">.</span></h1>
-      <time class="post-date">${fullDate(post.meta.date)}</time>
+      <time class="post-date">${fullDate(post.meta.date)}</time>${thumb}
       <div class="post-body">
 ${marked.parse(post.body)}
       </div>
@@ -126,12 +139,152 @@ const postListItems = (list) =>
     )
     .join("");
 
-const recentPosts = `<ul class="entry-list">${postListItems(posts.slice(0, 3))}</ul>`;
 const allPosts = `<ul class="entry-list">${postListItems(posts)}</ul>`;
 
+// ── 3a. Projects (single source of truth) ──────────────────────────────────
+// The projects page (via {{projects}}) and the home feed both render from this
+// list. `date` is each repo's first commit; `summary` is the short one-liner
+// shown in the home feed; `body` is the full write-up on the projects page.
+const projects = [
+  {
+    id: "drumcoach",
+    title: "DrumCoach",
+    date: "2026-06-13",
+    live: "https://drumcoach.nig.fm/",
+    repo: "https://github.com/nigelfds/drumcoach",
+    thumb: "drumcoach.jpg",
+    tags: "Web Audio API · DSP · JavaScript · Firebase/Firestore · GitHub Pages",
+    summary: "An app that listens to you drum and coaches your timing.",
+    body: `I've been learning the drums with my son this year, and we both struggle
+              with timing — so I built an app that listens to us play and coaches it. The
+              goal was something that just works on any phone or laptop, no specialist
+              audio gear: you play near the mic and DrumCoach detects and classifies each
+              hit, notates it on a live drum staff, and measures your timing with feedback
+              ranges tuned to your level. It was great to work with high- and low-pass
+              filters, Fourier transforms, and spectral centroids again — DSP concepts I
+              hadn't touched since my computer-engineering classes. I also got to play
+              with Firestore as a backing store, syncing practice data across devices tied
+              to a real Google identity.`,
+  },
+  {
+    id: "spell-to-fly",
+    title: "Spell to Fly",
+    date: "2026-05-27",
+    live: "https://spelltofly.nig.fm/",
+    repo: "https://github.com/nigelfds/spell-to-fly",
+    thumb: "spell-to-fly.jpg",
+    tags: "Rails · D3.js · TopoJSON · Web Speech API · Natural Earth · Heroku",
+    summary: "A geography game where you fly the map by spelling city names.",
+    body: `A geography-and-spelling game, and my excuse to work with maps again. I've
+              loved mapping software ever since my Nokia days in Berlin working on Ovi
+              Maps (2009–2010), so I put Claude to the test on map data, pathfinding, and
+              spoken audio. You fly across a region — Europe, Africa, Asia, or the
+              Americas — hopping from city to city by spelling each country and city name
+              hangman-style, guided by text-to-speech pronunciation. Only the territory
+              bordering you is revealed, so you're navigating a hidden graph toward a
+              ticketed destination. I built it to help my kids learn geography and improve
+              their spelling together. Getting the viewport and zoom behaviour right was
+              genuinely hard to do with AI. Something like this would have taken me weeks
+              of full-time work back in Berlin, but this time I had it running in two
+              weekends.`,
+  },
+  {
+    id: "mathgrid",
+    title: "MathGrid",
+    date: "2026-05-24",
+    live: "https://mathgrid.nig.fm",
+    repo: "https://github.com/nigelfds/maths",
+    thumb: "mathgrid.jpg",
+    tags: "Rails · Hotwire · Action Cable · Postgres · Redis · Heroku",
+    summary: "A real-time multiplayer arithmetic race on a shared grid.",
+    body: `A real-time multiplayer arithmetic game, and my go at a more ambitious
+              hands-off Claude Code build. It started as a paper card game I made for my
+              kids a year ago; this digital version lets 2+ players race on a shared 6×6
+              grid to find three numbers in a line that satisfy a target formula. I built
+              it partly to sharpen my kids' mental arithmetic and partly so my wife and I
+              could play against them across our own devices. There's a gentler
+              <em>No Multiplication</em> mode for younger players, room codes to join a
+              game, and a leaderboard. The real-time coordination runs on Rails' Action
+              Cable (via Turbo Streams + Redis) — and I made a point of getting it all
+              running on a minimum Heroku spec.`,
+  },
+  {
+    id: "spelling-bee",
+    title: "Spelling Bee",
+    date: "2026-05-23",
+    live: "https://spell.nig.fm",
+    repo: "https://github.com/nigelfds/spelling-bee",
+    thumb: "spelling-bee.jpg",
+    tags: "Rails · Ruby · Postgres · Heroku",
+    summary: "A hangman-style spelling game for kids, built hands-off with Claude Code.",
+    body: `A hands-off experiment in AI-only coding: I let Claude Code build the
+              whole thing to see how it handles animation, game rules, DB schema
+              design, and deployment. It's a small spelling game aimed at kids aged
+              6–10, where an animated bee fills in with each wrong guess. There's a
+              typed <em>Classic</em> mode and a spoken <em>Voice</em> mode — the latter
+              added to mirror the way my own kids were learning their spelling out loud
+              in school. Words come from the Oxford 3000 (with auto-fetched
+              definitions), and scores land on a leaderboard.`,
+  },
+].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+// Full project cards for the projects page (injected as {{projects}}).
+const projectsList = `<ul class="project-list">${projects
+  .map(
+    (p) => `
+        <li class="project" id="${p.id}">
+          <a class="project-media" href="${p.live}" target="_blank" rel="noopener">
+            <img src="{{rel}}projects/${p.thumb}" alt="Screenshot of ${escapeHtml(p.title)}" width="1000" height="625" loading="lazy" />
+          </a>
+          <div class="project-body">
+            <p class="project-date">${monthYearShort(p.date)}</p>
+            <h2 class="project-title">${p.title}</h2>
+            <p class="project-desc">${p.body}</p>
+            <p class="project-tags">${p.tags}</p>
+            <p class="project-links">
+              <a href="${p.live}" target="_blank" rel="noopener">Live ↗</a>
+              <a href="${p.repo}" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
+        </li>`
+  )
+  .join("")}</ul>`;
+
+// ── 3a-ii. Home feed: blog posts + projects, newest first ──────────────────
+const feed = [
+  ...posts.map((p) => ({
+    kind: "Post",
+    title: p.meta.title,
+    date: p.meta.date,
+    summary: p.meta.summary || "",
+    href: `{{rel}}blog/${p.slug}/`,
+  })),
+  ...projects.map((p) => ({
+    kind: "Project",
+    title: p.title,
+    date: p.date,
+    summary: p.summary,
+    href: `{{rel}}projects/#${p.id}`,
+  })),
+].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+const feedItems = (list) =>
+  list
+    .map(
+      (item) => `
+        <li class="entry">
+          <a href="${item.href}">
+            <span class="entry-title">${item.title}</span>
+            <time class="entry-meta">${monthYear(item.date)}<span class="entry-kind">${item.kind}</span></time>
+          </a>
+          <p class="entry-desc">${item.summary}</p>
+        </li>`
+    )
+    .join("");
+
+const recentPosts = `<ul class="entry-list">${feedItems(feed.slice(0, 3))}</ul>`;
+
 // ── 3b. Papers section (parsed from src/data/papers.md) ─────────────────────
-const escapeHtml = (s) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 // Deterministic hue (0–359) from a string, for the cover-tile color.
 const hueOf = (s) => {
@@ -366,6 +519,7 @@ for (const file of readdirSync(pagesDir).filter((f) => f.endsWith(".html"))) {
   const content = body
     .replaceAll("{{recent_posts}}", recentPosts)
     .replaceAll("{{all_posts}}", allPosts)
+    .replaceAll("{{projects}}", projectsList)
     .replaceAll("{{papers}}", papers)
     .replaceAll("{{books}}", books)
     .replaceAll("{{talks}}", talks);
