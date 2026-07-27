@@ -311,7 +311,7 @@ const feedItems = (list) =>
     })
     .join("");
 
-const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 5))}</ul>`;
+const recentPosts = `<ul class="feed">${feedItems(feed.slice(0, 15))}</ul>`;
 
 // Blog index: every post, same thumbnail layout as the feed (no kind pill —
 // they're all posts here).
