@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Another thing worth writing down — Nigel</title>
-  <meta name="description" content="A one-line summary of what this post is about." />
+  <title>SongCoach — pulling the drums out of any song — Nigel</title>
+  <meta name="description" content="A local macOS app that isolates the drum track from any song so you can learn it, then play along to the backing track. The first release is out." />
 
   <!-- Typography: General Sans + Gambetta (free, via Fontshare CDN) -->
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
@@ -70,12 +70,59 @@
 
     <article class="section post">
       <p class="eyebrow"><a class="back" href="../../blog/">← Blog</a></p>
-      <h1>Another thing worth writing down<span class="period">.</span></h1>
-      <time class="post-date">March 8, 2026</time>
+      <h1>SongCoach — pulling the drums out of any song<span class="period">.</span></h1>
+      <time class="post-date">July 27, 2026</time>
+      <img class="post-thumb" src="../../posts/songcoach.jpg" alt="SongCoach — pulling the drums out of any song" loading="lazy" />
       <div class="post-body">
-<p>A second placeholder post so the list has something to show.</p>
-<p>Posts are sorted by <code>date</code> (newest first), so the order on the home page and
-the blog index updates itself as you add more.</p>
+<p>This year my son and I started learning the drums together. The most fun way to
+get better — and the one that actually stuck — was to pick a song we love and
+play along. But playing along to a finished recording is harder than it sounds:
+the drummer is buried in the mix, so you can&#39;t quite hear what they&#39;re doing, and
+once you <em>can</em> play the part, their drums fight with yours.</p>
+<p>What we really wanted was two versions of every song — <strong>drums only</strong>, to hear
+exactly what was played, and <strong>the song with the drums removed</strong>, to play over.
+So Claude and I built it.</p>
+<h2>What it is</h2>
+<p><a href="https://github.com/nigelfds/songcoach">SongCoach</a> is a small macOS app for
+drummers, and the <strong>first release is now up</strong> on the
+<a href="https://github.com/nigelfds/songcoach/releases">downloads page</a>.</p>
+<p>You play any song through your Mac — a YouTube tab, Spotify, Apple Music, a local
+file — and SongCoach captures the audio and splits it into three stems: the full
+song, drums only, and the song without drums. Then it opens a player with three
+synced waveforms, solo switching, an A–B loop you set by dragging on the
+waveform, and a pitch-preserved slow-down, so you can drill four bars until
+they&#39;re yours.</p>
+<h2>The bits I found interesting</h2>
+<ul>
+<li><strong>The separation is an AI model running on your own machine.</strong> SongCoach uses
+<a href="https://github.com/adefossez/demucs">Demucs</a> to pull the drums out — bundled
+and run in-process, so there&#39;s nothing to install and no server call. This was
+my first time embedding an ML model directly inside a shipping app, which was
+half the reason I wanted to build it.</li>
+<li><strong>It records your system audio, so it works with anything.</strong> A tiny Swift
+helper taps the Mac&#39;s audio output with ScreenCaptureKit — no BlackHole or
+virtual audio device to set up. If your Mac can play it, SongCoach can capture
+it.</li>
+<li><strong>Everything stays on your machine.</strong> No account, no cloud, nothing uploaded.
+Your recordings and stems live in a folder on disk, and the little database is
+just a disposable index rebuilt from those files — delete it, or move the
+folder to another Mac, and it still works.</li>
+<li><strong>It&#39;s a real desktop app.</strong> Python, ffmpeg, the native capture helper, and the
+AI model are all frozen into one signed, notarized <code>.app</code> — no right-click
+&quot;Open&quot; dance, nothing else to install. Packaging a desktop app end to end was
+something I hadn&#39;t done in a long time, and getting it down to a
+drag-to-Applications DMG was oddly satisfying.</li>
+</ul>
+<h2>Getting it</h2>
+<p>It&#39;s macOS 13+ on Apple Silicon for now. Grab the <code>SongCoach.dmg</code> from the
+<a href="https://github.com/nigelfds/songcoach/releases">releases page</a>, drag it into
+Applications, and grant the screen &amp; system-audio recording permission on
+first capture. That&#39;s it.</p>
+<p>It&#39;s also completely <strong>free and open source</strong> — MIT-licensed, with the whole
+thing up on <a href="https://github.com/nigelfds/songcoach">GitHub</a>. Poke around, build
+it yourself, or open an issue.</p>
+<p>It&#39;s early — a v1 with rough edges — but it&#39;s already changed how we practise. If
+you drum, I&#39;d love to know what songs you take apart with it.</p>
 
       </div>
     </article>

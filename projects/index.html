@@ -70,18 +70,45 @@
     <section class="section section--page">
       <h1>Projects<span class="period">.</span></h1>
       <p class="section-note">
-        A handful of small apps I built for my kids this past year — each one a
+        A handful of small apps I built for my kids, friends and me — each one a
         hands-off experiment in how far Claude Code can go on its own.
       </p>
 
       <ul class="project-list">
+        <li class="project" id="songcoach">
+          <div class="project-body">
+            <p class="project-date">Jul 2026</p>
+            <h2 class="project-title">SongCoach</h2>
+            <a class="project-media" href="https://github.com/nigelfds/songcoach/releases" target="_blank" rel="noopener">
+              <img src="../projects/songcoach.jpg" alt="Screenshot of SongCoach" width="1000" height="625" loading="lazy" />
+            </a>
+            <p class="project-desc">An app to help my son and me get better at drums. We wanted to play along
+              to songs we actually like — but to learn a part properly you need to
+              <em>hear the drummer</em>, and once you can play it, their drums fight with
+              yours. So SongCoach takes any song playing on your Mac — a YouTube tab,
+              Spotify, a file — captures the system audio, and runs an AI source-separation
+              model (Demucs) to split it into three stems: the full song, drums only, and
+              the song with the drums removed. Then it opens a player with three synced
+              waveforms, solo switching, A–B looping, and a pitch-preserved slow-down, so
+              you can drill four bars until they're yours. Everything runs locally — no
+              account, no cloud, nothing uploaded. It was my chance to learn how to embed
+              an AI model inside an app, and to build and package a proper desktop app
+              again — something I hadn't done in a long time. It ships as a signed,
+              notarized macOS app.</p>
+            <p class="project-tags">Python · FastAPI · Demucs · Swift · WaveSurfer.js · macOS</p>
+            <p class="project-links">
+              <a href="https://github.com/nigelfds/songcoach/releases" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/nigelfds/songcoach" target="_blank" rel="noopener">GitHub ↗</a>
+            </p>
+          </div>
+        </li>
         <li class="project" id="drumcoach">
-          <a class="project-media" href="https://drumcoach.nig.fm/" target="_blank" rel="noopener">
-            <img src="../projects/drumcoach.jpg" alt="Screenshot of DrumCoach" width="1000" height="625" loading="lazy" />
-          </a>
           <div class="project-body">
             <p class="project-date">Jun 2026</p>
             <h2 class="project-title">DrumCoach</h2>
+            <a class="project-media" href="https://drumcoach.nig.fm/" target="_blank" rel="noopener">
+              <img src="../projects/drumcoach.jpg" alt="Screenshot of DrumCoach" width="1000" height="625" loading="lazy" />
+            </a>
             <p class="project-desc">I've been learning the drums with my son this year, and we both struggle
               with timing — so I built an app that listens to us play and coaches it. The
               goal was something that just works on any phone or laptop, no specialist
@@ -100,12 +127,12 @@
           </div>
         </li>
         <li class="project" id="spell-to-fly">
-          <a class="project-media" href="https://spelltofly.nig.fm/" target="_blank" rel="noopener">
-            <img src="../projects/spell-to-fly.jpg" alt="Screenshot of Spell to Fly" width="1000" height="625" loading="lazy" />
-          </a>
           <div class="project-body">
             <p class="project-date">May 2026</p>
             <h2 class="project-title">Spell to Fly</h2>
+            <a class="project-media" href="https://spelltofly.nig.fm/" target="_blank" rel="noopener">
+              <img src="../projects/spell-to-fly.jpg" alt="Screenshot of Spell to Fly" width="1000" height="625" loading="lazy" />
+            </a>
             <p class="project-desc">A geography-and-spelling game, and my excuse to work with maps again. I've
               loved mapping software ever since my Nokia days in Berlin working on Ovi
               Maps (2009–2010), so I put Claude to the test on map data, pathfinding, and
@@ -126,12 +153,12 @@
           </div>
         </li>
         <li class="project" id="mathgrid">
-          <a class="project-media" href="https://mathgrid.nig.fm" target="_blank" rel="noopener">
-            <img src="../projects/mathgrid.jpg" alt="Screenshot of MathGrid" width="1000" height="625" loading="lazy" />
-          </a>
           <div class="project-body">
             <p class="project-date">May 2026</p>
             <h2 class="project-title">MathGrid</h2>
+            <a class="project-media" href="https://mathgrid.nig.fm" target="_blank" rel="noopener">
+              <img src="../projects/mathgrid.jpg" alt="Screenshot of MathGrid" width="1000" height="625" loading="lazy" />
+            </a>
             <p class="project-desc">A real-time multiplayer arithmetic game, and my go at a more ambitious
               hands-off Claude Code build. It started as a paper card game I made for my
               kids a year ago; this digital version lets 2+ players race on a shared 6×6
@@ -150,12 +177,12 @@
           </div>
         </li>
         <li class="project" id="spelling-bee">
-          <a class="project-media" href="https://spell.nig.fm" target="_blank" rel="noopener">
-            <img src="../projects/spelling-bee.jpg" alt="Screenshot of Spelling Bee" width="1000" height="625" loading="lazy" />
-          </a>
           <div class="project-body">
             <p class="project-date">May 2026</p>
             <h2 class="project-title">Spelling Bee</h2>
+            <a class="project-media" href="https://spell.nig.fm" target="_blank" rel="noopener">
+              <img src="../projects/spelling-bee.jpg" alt="Screenshot of Spelling Bee" width="1000" height="625" loading="lazy" />
+            </a>
             <p class="project-desc">A hands-off experiment in AI-only coding: I let Claude Code build the
               whole thing to see how it handles animation, game rules, DB schema
               design, and deployment. It's a small spelling game aimed at kids aged
