@@ -143,6 +143,29 @@ ${marked.parse(post.body)}
 // shown in the home feed; `body` is the full write-up on the projects page.
 const projects = [
   {
+    id: "songcoach",
+    title: "SongCoach",
+    date: "2026-07-01",
+    live: "https://github.com/nigelfds/songcoach/releases",
+    repo: "https://github.com/nigelfds/songcoach",
+    thumb: "songcoach.jpg",
+    tags: "Python · FastAPI · Demucs · Swift · WaveSurfer.js · macOS",
+    summary: "A local macOS app that isolates the drums from any song so you can learn it, then play along.",
+    body: `An app to help my son and me get better at drums. We wanted to play along
+              to songs we actually like — but to learn a part properly you need to
+              <em>hear the drummer</em>, and once you can play it, their drums fight with
+              yours. So SongCoach takes any song playing on your Mac — a YouTube tab,
+              Spotify, a file — captures the system audio, and runs an AI source-separation
+              model (Demucs) to split it into three stems: the full song, drums only, and
+              the song with the drums removed. Then it opens a player with three synced
+              waveforms, solo switching, A–B looping, and a pitch-preserved slow-down, so
+              you can drill four bars until they're yours. Everything runs locally — no
+              account, no cloud, nothing uploaded. It was my chance to learn how to embed
+              an AI model inside an app, and to build and package a proper desktop app
+              again — something I hadn't done in a long time. It ships as a signed,
+              notarized macOS app.`,
+  },
+  {
     id: "drumcoach",
     title: "DrumCoach",
     date: "2026-06-13",
@@ -229,12 +252,12 @@ const projectsList = `<ul class="project-list">${projects
   .map(
     (p) => `
         <li class="project" id="${p.id}">
-          <a class="project-media" href="${p.live}" target="_blank" rel="noopener">
-            <img src="{{rel}}projects/${p.thumb}" alt="Screenshot of ${escapeHtml(p.title)}" width="1000" height="625" loading="lazy" />
-          </a>
           <div class="project-body">
             <p class="project-date">${monthYearShort(p.date)}</p>
             <h2 class="project-title">${p.title}</h2>
+            <a class="project-media" href="${p.live}" target="_blank" rel="noopener">
+              <img src="{{rel}}projects/${p.thumb}" alt="Screenshot of ${escapeHtml(p.title)}" width="1000" height="625" loading="lazy" />
+            </a>
             <p class="project-desc">${p.body}</p>
             <p class="project-tags">${p.tags}</p>
             <p class="project-links">
