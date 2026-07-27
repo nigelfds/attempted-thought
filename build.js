@@ -560,6 +560,12 @@ for (const file of readdirSync(pagesDir).filter((f) => f.endsWith(".html"))) {
 // ── 5. Copy assets (recursively, so covers/ ships too) ──────────────────────
 cpSync(join(SRC, "assets"), OUT, { recursive: true });
 
+// ── 6. GitHub Pages custom domain ───────────────────────────────────────────
+// Each `gh-pages` deploy REPLACES the branch, which wipes the CNAME file GitHub
+// Pages uses to remember the custom domain. Emitting it on every build keeps
+// the domain from resetting on every push.
+writeFileSync(join(OUT, "CNAME"), "www.nigel.in\n");
+
 console.log(
   `✓ Built ${readdirSync(pagesDir).length} pages and ${posts.length} posts → public/`
 );
