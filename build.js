@@ -143,6 +143,30 @@ ${marked.parse(post.body)}
 // shown in the home feed; `body` is the full write-up on the projects page.
 const projects = [
   {
+    id: "car-calc",
+    title: "CarCalc",
+    date: "2026-07-26",
+    live: "https://carcalc.nig.fm",
+    repo: "https://github.com/nigelfds/car-calc",
+    thumb: "car-calc.jpg",
+    tags: "Node · Express · Vanilla JS · Australian tax/FBT modelling · Heroku",
+    summary: "A Melbourne EV calculator that compares novated lease, loan and cash — no email required.",
+    body: `This one started as a chat at football practice. Brad, one of the other dads,
+              was in the market for an electric car — and kept hitting calculator sites
+              that wanted his email before they'd tell him anything, just so they could
+              spam him later. We got talking about how genuinely confusing the Australian
+              side of it is: the fringe-benefits-tax changes, and which way of paying — a
+              novated lease, a car loan, or cash — actually gets you the most car for your
+              budget. It seemed like a fun problem, so I built an app that handles both the
+              funding side and the car-selection side in one place. You tell it what you
+              earn and what you want in a car, set a monthly budget, and it works out how
+              much car each funding method reaches — with the novated-lease line flattening
+              dead at the $91,661 FBT threshold — then shows you five real EVs around that
+              ceiling, each costed three ways, with running costs, insurance and resale
+              baked in. Every rate is editable and sourced, nothing calls a model, and it
+              never asks for your email.`,
+  },
+  {
     id: "songcoach",
     title: "SongCoach",
     date: "2026-07-01",
