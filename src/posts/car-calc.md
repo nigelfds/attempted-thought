@@ -8,7 +8,7 @@ thumb: car-calc.jpg
 This one started at football practice. Brad, one of the other dads, was in the market
 for an electric car, and he was frustrated: every affordability calculator he
 found wanted his email address before it would tell him anything — purely so it
-could spam him later. We got talking about how genuinely confusing the Australian
+could spam him later. We got talking about how genuinely confusing the finance
 side of buying an EV is right now: the fringe-benefits-tax rules, and the fact
 that *how you pay* — a novated lease, a car loan, or cash — changes how much car
 you can afford as much as the sticker price does.

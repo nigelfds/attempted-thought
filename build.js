@@ -154,7 +154,7 @@ const projects = [
     body: `This one started as a chat at football practice. Brad, one of the other dads,
               was in the market for an electric car — and kept hitting calculator sites
               that wanted his email before they'd tell him anything, just so they could
-              spam him later. We got talking about how genuinely confusing the Australian
+              spam him later. We got talking about how genuinely confusing the finance
               side of it is: the fringe-benefits-tax changes, and which way of paying — a
               novated lease, a car loan, or cash — actually gets you the most car for your
               budget. It seemed like a fun problem, so I built an app that handles both the
