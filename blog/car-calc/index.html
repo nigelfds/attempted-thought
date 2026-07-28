@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarCalc — how much electric car can you actually afford? — Nigel</title>
+  <meta name="description" content="A Melbourne EV calculator that models novated lease vs loan vs cash, with running costs, insurance and resale for real cars baked in. No email required." />
+
+  <!-- Typography: General Sans + Gambetta (free, via Fontshare CDN) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&f[]=gambetta@400,500,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <!-- ───────────────────────── Icon rail navigation ─────────────────────────
+       Vertical pill pinned to the left on desktop; horizontal pill pinned to
+       the top on mobile. Active page is highlighted by main.js (path-based).
+  -->
+  <nav class="rail" aria-label="Primary">
+    <ul>
+      <li>
+        <a href="../../" data-nav="home" data-label="About" aria-label="About">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../blog/" data-label="Blog" aria-label="Blog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 17a2 2 0 0 0-2-2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../projects/" data-label="Projects" aria-label="Projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../books/" data-label="Books" aria-label="Books I like">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../papers/" data-label="Papers" aria-label="Papers I've read">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../talks/" data-label="Talks" aria-label="Past talks and presentations">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../contact/" data-label="Contact" aria-label="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-3.5 7.1"/></svg>
+        </a>
+      </li>
+      <!-- Theme toggle: default follows the OS; click to override to light. -->
+      <li class="rail-toggle">
+        <button class="theme-toggle" type="button" data-label="Theme" aria-label="Toggle light theme">
+          <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <article class="section post">
+      <p class="eyebrow"><a class="back" href="../../blog/">← Blog</a></p>
+      <h1>CarCalc — how much electric car can you actually afford?<span class="period">.</span></h1>
+      <time class="post-date">July 28, 2026</time>
+      <img class="post-thumb" src="../../posts/car-calc.jpg" alt="CarCalc — how much electric car can you actually afford?" loading="lazy" />
+      <div class="post-body">
+<p>This one started at football practice. Brad, one of the other dads, was in the market
+for an electric car, and he was frustrated: every affordability calculator he
+found wanted his email address before it would tell him anything — purely so it
+could spam him later. We got talking about how genuinely confusing the finance
+side of buying an EV is right now: the fringe-benefits-tax rules, and the fact
+that <em>how you pay</em> — a novated lease, a car loan, or cash — changes how much car
+you can afford as much as the sticker price does.</p>
+<p>It seemed like a fun problem to take on. So Claude and I built
+<a href="https://carcalc.nig.fm">CarCalc</a> — a calculator that handles the funding side
+and the car-selection side in one place, and never asks who you are.</p>
+<h2>What it works out</h2>
+<p>You tell it what you earn, how far you drive, what you could put down, and what
+you actually want in a car. Then it does two jobs most calculators keep separate:</p>
+<p><strong>The money.</strong> It compares three ways of paying for the <em>same</em> car so the numbers
+are actually comparable:</p>
+<ul>
+<li>a <strong>novated lease</strong>, with the FBT exemption modelled properly — including the
+cliff at the <strong>$91,661 threshold</strong>, where going one dollar over loses the
+exemption and roughly doubles the monthly cost;</li>
+<li>a <strong>car loan</strong>, with interest over the term and any deposit; and</li>
+<li>paying <strong>cash</strong>, weighed against what that money would have earned if you&#39;d left
+it invested.</li>
+</ul>
+<p>The budget slider shows how much car each route reaches, so you can see the
+crossover point where borrowing actually buys you more car than packaging does.
+Every rate behind it — lease finance rate, loan rate, admin fees, the return your
+savings would otherwise make, the lease residual — is shown, <strong>sourced, and
+editable</strong>, because your real quote will differ.</p>
+<p><strong>The cars.</strong> It then shows you five real EVs bracketed around that budget, each
+costed under all three funding options. And it costs the <em>whole</em> car, not just
+the price:</p>
+<ul>
+<li><strong>running costs</strong> — electricity from each model&#39;s real consumption, plus rego,
+servicing and tyres;</li>
+<li><strong>insurance</strong>, per model, not a flat guess;</li>
+<li><strong>resale</strong>, from a depreciation curve per car — the thing that quietly
+separates two similarly-priced EVs; and</li>
+<li>for a novated lease, the <strong>balloon payment</strong> at the end, and whether selling the
+car would clear it.</li>
+</ul>
+<p>Everything&#39;s filtered by what you said you wanted — body type, boot space, seats,
+range — across a dataset of dozens of real models.</p>
+<h2>The part that made it worth building</h2>
+<p>Nothing in CarCalc calls a model, and it never asks for your email. After one
+fetch of the dataset when the page loads, there are <strong>no network calls at all</strong> —
+every number, the ranking and the shortlist are computed on your machine,
+deterministically. Same inputs, same answer, every time, offline. Which is
+exactly the opposite of the sites that set Brad off in the first place.</p>
+<p>Under the hood it&#39;s deliberately plain: Node and Express, vanilla ES modules with
+no framework or build step, and a calculation core (tax, FBT, novated lease, loan,
+running costs, resale, ranking) that&#39;s covered by a few hundred tests — the same
+code runs in the browser and in the test runner, unchanged.</p>
+<h2>Try it</h2>
+<p>It&#39;s live at <a href="https://carcalc.nig.fm">carcalc.nig.fm</a> — Melbourne-focused for now,
+and free. Punch in your numbers and see what comes out. And the usual, important
+caveat: it&#39;s general information only, built from published rates and your inputs,
+not personal financial or tax advice — check any real decision against a real
+quote and a licensed adviser.</p>
+
+      </div>
+    </article>
+    <footer class="footer">
+      <p>© <span id="year"></span> Nigel Fernandes · Built in Melbourne.</p>
+    </footer>
+  </main>
+
+  <script src="../../main.js" defer></script>
+</body>
+</html>
