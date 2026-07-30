@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SongCoach v1.1.0 — capture a whole playlist, hands-free — Nigel</title>
+  <meta name="description" content="The second SongCoach release adds an Apple Music mode that auto-captures a playlist song by song, plus library search, delete, and export/import." />
+
+  <!-- Typography: General Sans + Gambetta (free, via Fontshare CDN) -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&f[]=gambetta@400,500,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <!-- ───────────────────────── Icon rail navigation ─────────────────────────
+       Vertical pill pinned to the left on desktop; horizontal pill pinned to
+       the top on mobile. Active page is highlighted by main.js (path-based).
+  -->
+  <nav class="rail" aria-label="Primary">
+    <ul>
+      <li>
+        <a href="../../" data-nav="home" data-label="About" aria-label="About">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../blog/" data-label="Blog" aria-label="Blog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 17a2 2 0 0 0-2-2H8l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../projects/" data-label="Projects" aria-label="Projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../books/" data-label="Books" aria-label="Books I like">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../papers/" data-label="Papers" aria-label="Papers I've read">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/><path d="M8 9h2"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../talks/" data-label="Talks" aria-label="Past talks and presentations">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="../../contact/" data-label="Contact" aria-label="Contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 12v1.5a2.5 2.5 0 0 0 5 0V12a9 9 0 1 0-3.5 7.1"/></svg>
+        </a>
+      </li>
+      <!-- Theme toggle: default follows the OS; click to override to light. -->
+      <li class="rail-toggle">
+        <button class="theme-toggle" type="button" data-label="Theme" aria-label="Toggle light theme">
+          <svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" stroke="none"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <article class="section post">
+      <p class="eyebrow"><a class="back" href="../../blog/">← Blog</a></p>
+      <h1>SongCoach v1.1.0 — capture a whole playlist, hands-free<span class="period">.</span></h1>
+      <time class="post-date">July 30, 2026</time>
+      <img class="post-thumb" src="../../posts/songcoach-alpha-2.jpg" alt="SongCoach v1.1.0 — capture a whole playlist, hands-free" loading="lazy" />
+      <div class="post-body">
+<p>A quick follow-up to <a href="../songcoach/">the first release</a>: <strong>SongCoach
+v1.1.0 (Alpha 2)</strong> is out, and it&#39;s all about the practice workflow. Four new things in this new release:</p>
+<p><strong>Apple Music mode</strong> — the big one. Turn it on, then just play a song or a whole
+playlist in Apple Music, and SongCoach captures each track for you: it starts and
+stops cleanly at every song boundary and sends each finished song to the stem
+queue, one after another, until you hit Stop. Pause the music and the recording
+pauses with it, so there&#39;s no dead air and every song stays one clean take. Tracks
+separate one at a time in the background with live progress — <em>queued →
+separating → done</em> — and each one picks up its cover art from Apple Music. Set a
+playlist going and come back to a library full of drum stems.</p>
+<p><strong>Search + pagination</strong> — as the library grows, a search box filters by song and
+artist as you type, and the list paginates so long libraries stay tidy. Both run
+entirely in the app.</p>
+<p><strong>Delete a recording</strong> — a trash button (with a confirm) in the player. It&#39;s a
+soft delete: the item leaves your library, but the audio on disk is never touched,
+so nothing is truly lost.</p>
+<p><strong>Export &amp; import</strong> — move your whole library between Macs in two clicks.
+Export downloads it as a single <code>.zip</code>; import merges one back in. As always it
+stays local — the zip is the only thing that leaves your machine, and only if you
+carry it there yourself.</p>
+<p>There&#39;s also a pile of reliability work under the hood: capture segmenting, the
+stem queue, delete edge cases, and a frozen-app crash where the Apple Music
+watcher couldn&#39;t see playback.</p>
+<p>It&#39;s still macOS 13+ on Apple Silicon, and still free and open source. Grab
+<code>SongCoach.dmg</code> from the
+<a href="https://github.com/nigelfds/songcoach/releases">releases page</a>.</p>
+
+      </div>
+    </article>
+    <footer class="footer">
+      <p>© <span id="year"></span> Nigel Fernandes · Built in Melbourne.</p>
+    </footer>
+  </main>
+
+  <script src="../../main.js" defer></script>
+</body>
+</html>
